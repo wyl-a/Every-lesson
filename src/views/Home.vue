@@ -160,7 +160,6 @@
     import Vue from 'vue';
     import {Lazyload} from 'vant';
 
-<<<<<<< HEAD
     Vue.use(Lazyload);
     export default {
         components: {
@@ -199,41 +198,6 @@
             })
         }
     };
-=======
-Vue.use(Lazyload);
-export default {
-  components: {
-    FTtitle,
-  },
-  data() {
-    return {
-      bannerImgs: ['https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20197Cxc53hktC1569839552.jpg',
-      'https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019MGNW3BtiS91569839576.jpg',
-      'https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019LnKumseuhw1569839569.jpg',
-      'https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20193KAjU2cB6h1569839562.jpg'],
-      show:false,
-    };
-  },
-  mounted() {
-  },
-  methods: {
-    onevsone(){
-      this.$router.push('/onevsone');
-    },
-<<<<<<< HEAD
-    lzhcourse(){
-      this.$router.push('/course')
-    },
-    showPopup(){
-      this.show=true
-=======
-    routeCourse(){
-      this.$router.push('/course');
->>>>>>> cfc1ffebf664c09b58fa5a3f7ae661933a604917
-    }
-  },
-};
->>>>>>> 1513d6767d89321372961686cfa6088d555a8de3
 </script>
 
 <style scoped>
@@ -356,7 +320,6 @@ export default {
   margin: 5px 5px;
   border-bottom: 1px solid #eee;
 }
-<<<<<<< HEAD
   .zmb_FT_item_tuijian_wpff{
     width: 100%;
     height: 2rem;
@@ -373,10 +336,4 @@ export default {
     width: 100%;
     height: 3rem;
   }
-=======
-.box{
-  width: 100%;
-  height: 60px;
-}
->>>>>>> 1513d6767d89321372961686cfa6088d555a8de3
 </style>
