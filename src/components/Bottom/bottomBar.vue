@@ -17,7 +17,7 @@ export default {};
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: #e6e6e6;
+  background: #fff;
   position: fixed;
   left: 0;
   bottom: 0;

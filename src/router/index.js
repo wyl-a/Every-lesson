@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/course',
     name: 'Course',
-    component: () => import('../views/Course.vue'),
+    component: () => import('../views/course/Course.vue'),
     meta: {
       title: "课程",
       email:true,
@@ -62,6 +62,15 @@ const routes = [
       title: "邮箱",
       email:false,
       bottomBar:false,
+    }
+  },
+  //一对一课程
+  {
+    path: '/onevsone',
+    name: 'onevsone',
+    component: () => import('../views/homeRoutes/onevsone.vue'),
+    meta: {
+      title: "一对一课程"
     }
   },
 ]
