@@ -117,6 +117,13 @@ const routes = [{
       email: true, //邮箱
     }
   },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import('../views/search/search.vue'),
+    meta: {
+    }
+  },
 ]
 
 const router = new VueRouter({
