@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Navbar/>
     <router-view />
     <BottomBar>
       <BottomBox path="/">
@@ -28,15 +29,20 @@
         <p slot="title">我的</p>
       </BottomBox>
     </BottomBar>
+    <MailBox></MailBox>
   </div>
 </template>
 <script>
 import BottomBar from "./components/Bottom/bottomBar";
 import BottomBox from "./components/Bottom/bottomBox";
+import Navbar from './components/navBar/navBar';
+import MailBox from './components/mailBox/mailBox';
 export default {
   components: {
     BottomBar,
     BottomBox,
+    Navbar,
+    MailBox,
   },
 };
 </script>

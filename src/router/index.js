@@ -9,7 +9,10 @@ const routes = [
     name: 'home',
     component: () => import('../views/Home.vue'),
     meta: {
-      title: "首页"
+      title: "首页",
+      isShow:false,
+      isTab:true,
+      email:true,
     }
   },
   {
@@ -17,7 +20,11 @@ const routes = [
     name: 'Course',
     component: () => import('../views/course/Course.vue'),
     meta: {
-      title: "课程"
+      title: "课程",
+      isShow:true,
+      isShowleft:false,
+      isTab:true,
+      email:true,
     }
   },
    {
@@ -25,7 +32,11 @@ const routes = [
     name: 'Appointment',
     component: () => import('../views/Appointment.vue'),
     meta: {
-      title: "约课记录"
+      title: "约课记录",
+      isShow:true,
+      isShowleft:false,
+      isTab:true,
+      email:true,
     }
   }, 
   {
@@ -33,7 +44,11 @@ const routes = [
     name: 'Practice',
     component: () => import('../views/Practice.vue'),
     meta: {
-      title: "练习"
+      title: "练习",
+      isShow:true,
+      isShowleft:false,
+      isTab:true,
+      email:true,
     }
   },
   {
@@ -41,7 +56,11 @@ const routes = [
     name: 'User',
     component: () => import('../views/User.vue'),
     meta: {
-      title: "我的"
+      title: "我的",
+      isShow:true,
+      isShowleft:false,
+      isTab:true,
+      email:true,
     }
   },
   //一对一课程
@@ -50,7 +69,17 @@ const routes = [
     name: 'onevsone',
     component: () => import('../views/homeRoutes/onevsone.vue'),
     meta: {
-      title: "一对一课程"
+      title: "一对一课程",
+      isShow:true,
+      isShowleft:true,
+      isTab:false,
+    }
+  },
+  {
+    path: '/email',
+    name: 'email',
+    component: () => import('../views/mailBox/email.vue'),
+    meta: {
     }
   },
 ]
