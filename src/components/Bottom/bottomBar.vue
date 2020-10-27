@@ -1,13 +1,19 @@
 <template>
   <div>
-    <div class="wyl_bottomBar">
+    <div class="wyl_bottomBar" v-show="isTab">
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    isTab(){
+      return this.$route.meta.isTab;
+    }
+  },
+};
 </script>
 
 <style>

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Navbar/>
     <router-view />
     <BottomBar>
       <BottomBox path="/">
@@ -33,10 +34,12 @@
 <script>
 import BottomBar from "./components/Bottom/bottomBar";
 import BottomBox from "./components/Bottom/bottomBox";
+import Navbar from './components/navBar/navBar'
 export default {
   components: {
     BottomBar,
     BottomBox,
+    Navbar,
   },
 };
 </script>
