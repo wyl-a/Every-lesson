@@ -44,6 +44,15 @@ const routes = [
       title: "我的"
     }
   },
+  //一对一课程
+  {
+    path: '/onevsone',
+    name: 'onevsone',
+    component: () => import('../views/homeRoutes/onevsone.vue'),
+    meta: {
+      title: "一对一课程"
+    }
+  },
 ]
 
 const router = new VueRouter({
