@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="wyl_bottomBar">
+    <div class="wyl_bottomBar" v-show="this.$route.meta.bottomBar">
       <slot></slot>
     </div>
   </div>

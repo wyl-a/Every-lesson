@@ -9,7 +9,9 @@ const routes = [
     name: 'home',
     component: () => import('../views/Home.vue'),
     meta: {
-      title: "首页"
+      title: "首页",
+      email:true,  //邮箱显示隐藏
+      bottomBar:true, //底部导航显示隐藏
     }
   },
   {
@@ -17,7 +19,9 @@ const routes = [
     name: 'Course',
     component: () => import('../views/Course.vue'),
     meta: {
-      title: "课程"
+      title: "课程",
+      email:true,
+      bottomBar:true,
     }
   },
    {
@@ -25,7 +29,9 @@ const routes = [
     name: 'Appointment',
     component: () => import('../views/Appointment.vue'),
     meta: {
-      title: "约课记录"
+      title: "约课记录",
+      email:true,
+      bottomBar:true,
     }
   }, 
   {
@@ -33,7 +39,9 @@ const routes = [
     name: 'Practice',
     component: () => import('../views/Practice.vue'),
     meta: {
-      title: "练习"
+      title: "练习",
+      email:true,
+      bottomBar:true,
     }
   },
   {
@@ -41,7 +49,19 @@ const routes = [
     name: 'User',
     component: () => import('../views/User.vue'),
     meta: {
-      title: "我的"
+      title: "我的",
+      email:true,
+      bottomBar:true,
+    }
+  },
+  {
+    path: '/email',
+    name: 'Email',
+    component: () => import('../views/mailBox/email.vue'),
+    meta: {
+      title: "邮箱",
+      email:false,
+      bottomBar:false,
     }
   },
 ]

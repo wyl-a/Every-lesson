@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <MailBox></MailBox>
     <router-view />
     <BottomBar>
       <BottomBox path="/">
@@ -33,15 +34,17 @@
 <script>
 import BottomBar from "./components/Bottom/bottomBar";
 import BottomBox from "./components/Bottom/bottomBox";
+import MailBox from "./components/mailBox/mailBox";
 export default {
   components: {
     BottomBar,
     BottomBox,
+    MailBox,
   },
 };
 </script>
 <style>
-*{
+* {
   margin: 0;
   padding: 0;
 }

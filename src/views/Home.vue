@@ -51,6 +51,7 @@
         <div></div>
       </div>
     </section>
+    <div class="box"></div>
   </div>
 </template>
 
@@ -165,5 +166,9 @@ body {
   background: rgb(189, 126, 126);
   border-radius: 10px;
   margin: 0.2rem;
+}
+.box{
+  width: 100%;
+  height: 80px;
 }
 </style>

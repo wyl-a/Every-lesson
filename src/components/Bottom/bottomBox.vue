@@ -7,7 +7,7 @@
       <div v-else class="wyl_img">
         <slot name="img"></slot>
       </div>
-      <div :class="isBottom?'wyl_title_s':'wyl_title'">
+      <div :class="isBottom ? 'wyl_title_s' : 'wyl_title'">
         <slot name="title"></slot>
       </div>
     </div>
@@ -61,13 +61,13 @@ export default {
   width: 1rem;
   height: 1rem;
 }
-.wyl_title{
+.wyl_title {
   width: 100%;
   height: 1rem;
   font-size: 0.6rem;
   color: gray;
 }
-.wyl_title_s{
+.wyl_title_s {
   width: 100%;
   height: 1rem;
   font-size: 0.6rem;
