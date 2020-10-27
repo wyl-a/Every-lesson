@@ -45,4 +45,7 @@ export default {
   margin: 0;
   padding: 0;
 }
+#app{
+  background: #F0F2F5;
+}
 </style>
