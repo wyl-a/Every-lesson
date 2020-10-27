@@ -10,8 +10,13 @@ const routes = [
     component: () => import('../views/Home.vue'),
     meta: {
       title: "首页",
+<<<<<<< HEAD
       isShow:false,
       isTab:true,
+=======
+      email:true,  //邮箱显示隐藏
+      bottomBar:true, //底部导航显示隐藏
+>>>>>>> c208ab8025fc5041c2d3e9f7e6a08ab41b10c882
     }
   },
   {
@@ -20,9 +25,14 @@ const routes = [
     component: () => import('../views/course/Course.vue'),
     meta: {
       title: "课程",
+<<<<<<< HEAD
       isShow:true,
       isShowleft:false,
       isTab:true,
+=======
+      email:true,
+      bottomBar:true,
+>>>>>>> c208ab8025fc5041c2d3e9f7e6a08ab41b10c882
     }
   },
    {
@@ -31,9 +41,14 @@ const routes = [
     component: () => import('../views/Appointment.vue'),
     meta: {
       title: "约课记录",
+<<<<<<< HEAD
       isShow:true,
       isShowleft:false,
       isTab:true,
+=======
+      email:true,
+      bottomBar:true,
+>>>>>>> c208ab8025fc5041c2d3e9f7e6a08ab41b10c882
     }
   }, 
   {
@@ -42,9 +57,14 @@ const routes = [
     component: () => import('../views/Practice.vue'),
     meta: {
       title: "练习",
+<<<<<<< HEAD
       isShow:true,
       isShowleft:false,
       isTab:true,
+=======
+      email:true,
+      bottomBar:true,
+>>>>>>> c208ab8025fc5041c2d3e9f7e6a08ab41b10c882
     }
   },
   {
@@ -53,9 +73,24 @@ const routes = [
     component: () => import('../views/User.vue'),
     meta: {
       title: "我的",
+<<<<<<< HEAD
       isShow:true,
       isShowleft:false,
       isTab:true,
+=======
+      email:true,
+      bottomBar:true,
+    }
+  },
+  {
+    path: '/email',
+    name: 'Email',
+    component: () => import('../views/mailBox/email.vue'),
+    meta: {
+      title: "邮箱",
+      email:false,
+      bottomBar:false,
+>>>>>>> c208ab8025fc5041c2d3e9f7e6a08ab41b10c882
     }
   },
   //一对一课程

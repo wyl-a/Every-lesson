@@ -1,6 +1,10 @@
 <template>
   <div id="app">
+<<<<<<< HEAD
     <Navbar/>
+=======
+    <MailBox></MailBox>
+>>>>>>> c208ab8025fc5041c2d3e9f7e6a08ab41b10c882
     <router-view />
     <BottomBar>
       <BottomBox path="/">
@@ -34,17 +38,25 @@
 <script>
 import BottomBar from "./components/Bottom/bottomBar";
 import BottomBox from "./components/Bottom/bottomBox";
+<<<<<<< HEAD
 import Navbar from './components/navBar/navBar'
+=======
+import MailBox from "./components/mailBox/mailBox";
+>>>>>>> c208ab8025fc5041c2d3e9f7e6a08ab41b10c882
 export default {
   components: {
     BottomBar,
     BottomBox,
+<<<<<<< HEAD
     Navbar,
+=======
+    MailBox,
+>>>>>>> c208ab8025fc5041c2d3e9f7e6a08ab41b10c882
   },
 };
 </script>
 <style>
-*{
+* {
   margin: 0;
   padding: 0;
 }
