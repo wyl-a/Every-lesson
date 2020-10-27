@@ -12,7 +12,6 @@
 export default {
     methods:{
         up(){
-            console.log('asdfasfd');
             this.$router.go(-1);
         }
     },
