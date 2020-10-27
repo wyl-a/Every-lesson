@@ -31,20 +31,6 @@
             :show-confirm="false"
             :style="{ height: '500px' }"
           />
-           <div class="lzh-butbox">
-              <van-button
-                type="danger"
-                style="background: #fff; color: #000; border: 1px solid #d9d9d9"
-                >重置</van-button
-              >
-              <van-button
-                type="danger"
-                style="background: #eb6100; color: #fff"
-
-              >
-                确认
-              </van-button>
-            </div>
         </div>
 
         <div class="zmb_time_btns">
@@ -147,20 +133,11 @@
                 </div>
               </div>
             </div>
-            <div class="lzh-butbox">
-              <van-button
-                type="danger"
-                style="background: #fff; color: #000; border: 1px solid #d9d9d9"
-                >重置</van-button
-              >
-              <van-button
-                type="danger"
-                style="background: #eb6100; color: #fff"
-
-              >
-                确认
-              </van-button>
-            </div>
+            <div style="height:1.6rem"></div>
+          <div class="zmb_time_btns">
+          <div class="zmb_time_btns_reset">重置</div>
+          <div class="zmb_time_btns_submit">确定</div>
+        </div>
       </li>
     </ul>
   </div>
@@ -170,8 +147,8 @@
 export default {
   data() {
     return {
-       checked: true,
-      checkedr: true,
+       checked: false,
+      checkedr: false,
       minDate: new Date(2020, 9, 20),
       maxDate: new Date(2020, 9, 31),
       teacherList: [
@@ -412,19 +389,5 @@ body {
   text-align: center;
   margin-right: 0.7rem;
   margin-bottom: 0.8rem;
-}
-.lzh-butbox {
-  width: 100%;
-  height: 3rem;
-  display: inline-flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 9;
-  position: fixed;
-  bottom: 0;
-}
-.lzh-butbox button {
-  width: 6rem;
-  height: 1.3rem;
 }
 </style>
