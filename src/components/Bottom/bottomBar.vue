@@ -1,10 +1,6 @@
 <template>
   <div>
-<<<<<<< HEAD
     <div class="wyl_bottomBar" v-show="isTab">
-=======
-    <div class="wyl_bottomBar" v-show="this.$route.meta.bottomBar">
->>>>>>> c208ab8025fc5041c2d3e9f7e6a08ab41b10c882
       <slot></slot>
     </div>
   </div>
