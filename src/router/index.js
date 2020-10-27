@@ -82,6 +82,13 @@ const routes = [
     meta: {
     }
   },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import('../views/search/search.vue'),
+    meta: {
+    }
+  },
 ]
 
 const router = new VueRouter({
