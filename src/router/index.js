@@ -12,6 +12,7 @@ const routes = [
       title: "首页",
       isShow:false,
       isTab:true,
+      email:true,
     }
   },
   {
@@ -23,6 +24,7 @@ const routes = [
       isShow:true,
       isShowleft:false,
       isTab:true,
+      email:true,
     }
   },
    {
@@ -34,6 +36,7 @@ const routes = [
       isShow:true,
       isShowleft:false,
       isTab:true,
+      email:true,
     }
   }, 
   {
@@ -45,6 +48,7 @@ const routes = [
       isShow:true,
       isShowleft:false,
       isTab:true,
+      email:true,
     }
   },
   {
@@ -56,6 +60,7 @@ const routes = [
       isShow:true,
       isShowleft:false,
       isTab:true,
+      email:true,
     }
   },
   //一对一课程
@@ -68,6 +73,13 @@ const routes = [
       isShow:true,
       isShowleft:true,
       isTab:false,
+    }
+  },
+  {
+    path: '/email',
+    name: 'email',
+    component: () => import('../views/mailBox/email.vue'),
+    meta: {
     }
   },
 ]
