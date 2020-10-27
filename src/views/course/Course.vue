@@ -101,7 +101,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 .van-cell__value {
   display: none;
 }
