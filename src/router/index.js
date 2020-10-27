@@ -15,7 +15,7 @@ const routes = [
   {
     path: '/course',
     name: 'Course',
-    component: () => import('../views/Course.vue'),
+    component: () => import('../views/course/Course.vue'),
     meta: {
       title: "课程"
     }
