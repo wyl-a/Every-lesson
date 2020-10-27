@@ -55,7 +55,7 @@
 
     .practice_top_container {
         width: 95vw;
-        height: 7rem;
+        height: 8rem;
         background-color: #fff;
         margin: 0.4rem;
         border-radius: 5px;
@@ -65,7 +65,7 @@
     }
 .practice_foot_container{
     width: 100%;
-    height: 10rem;
+    height: 12rem;
     background-color: #fff;
 }
     .practice_foot_p{
