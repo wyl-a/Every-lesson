@@ -222,9 +222,6 @@ body {
   border-radius: 10px;
   margin: 0.3rem;
 }
-.zmb_FT_item_tuijian div {
-  /*height: 8rem;*/
-}
 .wpf_FT_item_img {
   width: 100%;
   height: 100%;
