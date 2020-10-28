@@ -81,6 +81,7 @@ const routes = [{
     meta: {}
   },
   {
+<<<<<<< HEAD
     path: '/login',
     name: 'Login',
     component: () => import('../views/login/Login.vue'),
@@ -103,18 +104,37 @@ const routes = [{
     }
   },
   {
+=======
+>>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
     path: '/search',
     name: 'search',
     component: () => import('../views/search/search.vue'),
     meta: {}
   },
+<<<<<<< HEAD
 
   { //考点专练
+=======
+  {//考点专练
+>>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
     path: '/examination-site',
     name: 'Examination-site',
     component: () => import('../views/practice/Examination-site.vue'),
     meta: {
-      title: "考点专练",
+      title: "题库选择",
+      isShow: true,
+      isShowleft: true,
+      isTab: true,
+      email: true,
+
+    }
+  },
+  {//学习日历
+    path: '/rili',
+    name: 'Rili',
+    component: () => import('../views/rili/rili.vue'),
+    meta: {
+      title: "学习日历",
       isShow: true,
       isShowleft: true,
       isTab: true,
@@ -148,7 +168,20 @@ const routes = [{
       isShowright: true //顶部搜索
     }
   },
+<<<<<<< HEAD
   { //错题练习
+=======
+  //登录页面路由
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/login/Login.vue'),
+    meta: {
+      
+    }
+  },
+  {//错题练习
+>>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
     path: '/wrong-question-practice',
     name: 'Wrong-question-practice',
     component: () => import('../views/practice/Wrong-question-practice.vue'),
@@ -319,6 +352,18 @@ const routes = [{
       email: true,
     }
   },
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+>>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
 ]
 
 const router = new VueRouter({
@@ -326,6 +371,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 })
+<<<<<<< HEAD
 router.beforeEach((to, from, next) => {
   let token = localStorage.getItem('token')
   if (to.name == "Login") {
@@ -338,4 +384,7 @@ router.beforeEach((to, from, next) => {
     }
   }
 })
+=======
+
+>>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
 export default router
