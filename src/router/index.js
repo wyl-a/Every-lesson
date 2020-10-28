@@ -124,6 +124,94 @@ const routes = [{
     meta: {
     }
   },
+
+  {//考点专练
+    path: '/examination-site',
+    name: 'Examination-site',
+    component: () => import('../views/practice/Examination-site.vue'),
+    meta: {
+      title: "考点专练",
+      isShow: true,
+      isShowleft: true,
+      isTab: true,
+      email: true,
+
+    }
+  },
+  {//套卷练习
+    path: '/set-up',
+    name: 'Set-up',
+    component: () => import('../views/practice/Set-up.vue'),
+    meta: {
+      title: "套卷练习",
+      isShow: true,
+      isShowleft: true,
+      isTab: true,
+      email: true,
+      isShowright:true //顶部搜索
+    }
+  },
+  {//仿真模考
+    path: '/simulation-test',
+    name: 'Simulation-test',
+    component: () => import('../views/practice/Simulation-test.vue'),
+    meta: {
+      title: "仿真模考",
+      isShow: true,
+      isShowleft: true,
+      isTab: false,
+      email: true,
+      isShowright:true //顶部搜索
+    }
+  },
+  {//错题练习
+    path: '/wrong-question-practice',
+    name: 'Wrong-question-practice',
+    component: () => import('../views/practice/Wrong-question-practice.vue'),
+    meta: {
+      title: "错题练习",
+      isShow: true,
+      isShowleft: true,
+      isTab: false,
+      email: true,
+      isShowright:true //顶部搜索
+    }
+  },
+  {//测评记录
+    path: '/evaluation-record',
+    name: 'Evaluation-record',
+    component: () => import('../views/practice/Evaluation-record.vue'),
+    meta: {
+      title: "测评记录",
+      isShow: true,
+      isShowleft: true,
+      isTab: false,
+      email: true,
+      isShowright:true //顶部搜索
+    }
+  },
+  {//习题收藏
+    path: '/exercise-collection',
+    name: 'Exercise-collection',
+    component: () => import('../views/practice/Exercise-collection.vue'),
+    meta: {
+      title: "习题收藏",
+      isShow: true,
+      isShowleft: true,
+      isTab: false,
+      email: true,
+      isShowright:true //顶部搜索
+    }
+  },
+
+
+
+
+
+
+
+
+
 ]
 
 const router = new VueRouter({

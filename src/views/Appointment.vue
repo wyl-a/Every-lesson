@@ -36,11 +36,11 @@ export default {
 <style scoped>
 .tab_mav_container {
   width: 100vw;
-  height: 90vh;
+  height: 75vh;
   background-color: #f0f2f5;
-  /*display: inline-flex;*/
-  /*justify-content: center;*/
-  /*align-items: center;*/
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tab_mav_wrapper {
