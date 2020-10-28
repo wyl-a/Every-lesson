@@ -6,12 +6,9 @@ const apl = {
     //接口路径
     URL: {
         //轮播图路径
-<<<<<<< HEAD
+
       Banner:'/api/app/banner',
 
-=======
-        Banner: '/banner',
->>>>>>> 467b20a320661c6e5da88661a2d79d8b250afd70
         //首页列表老师
         GETteacher: '/api/app/recommend/appIndex',
         //课程

@@ -16,11 +16,10 @@
 
 <script>
 export default {
-<<<<<<< HEAD
-  methods: { 
-=======
+
+
   methods: {
->>>>>>> 467b20a320661c6e5da88661a2d79d8b250afd70
+
     up() {
       this.$router.go(-1);
     },
@@ -35,13 +34,12 @@ export default {
     isShowleft() {
       return this.$route.meta.isShowleft;
     },
-<<<<<<< HEAD
-=======
+
+
     isShowright() {
       return this.$route.meta.isShowright;
     },
->>>>>>> 467b20a320661c6e5da88661a2d79d8b250afd70
-  },
+  }
 };
 </script>
 

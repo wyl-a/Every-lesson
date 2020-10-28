@@ -31,10 +31,6 @@
             :show-confirm="false"
             :style="{ height: '500px' }"
           />
-<<<<<<< HEAD
-           
-=======
->>>>>>> 467b20a320661c6e5da88661a2d79d8b250afd70
         </div>
 
         <div class="zmb_time_btns">
@@ -137,12 +133,10 @@
                 </div>
               </div>
             </div>
-<<<<<<< HEAD
-            <div class="zmb_time_btns">
-=======
+          
             <div style="height:1.6rem"></div>
           <div class="zmb_time_btns">
->>>>>>> 467b20a320661c6e5da88661a2d79d8b250afd70
+
           <div class="zmb_time_btns_reset">重置</div>
           <div class="zmb_time_btns_submit">确定</div>
         </div>
