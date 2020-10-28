@@ -99,6 +99,19 @@ const routes = [{
 
     }
   },
+  {//学习日历
+    path: '/rili',
+    name: 'Rili',
+    component: () => import('../views/rili/rili.vue'),
+    meta: {
+      title: "学习日历",
+      isShow: true,
+      isShowleft: true,
+      isTab: true,
+      email: true,
+
+    }
+  },
   {//套卷练习
     path: '/set-up',
     name: 'Set-up',
