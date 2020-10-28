@@ -9,7 +9,7 @@ const routes = [{
     component: () => import('../views/Home.vue'),
     meta: {
       title: "首页",
-      isShow: true,
+      isShow: false,
       isTab: true,
       email: true,
     }
@@ -56,7 +56,7 @@ const routes = [{
     component: () => import('../views/User.vue'),
     meta: {
       title: "我的",
-      isShow: false,
+      isShow: true,
       isShowleft: false,
       isTab: true,
       email: true,
@@ -81,42 +81,12 @@ const routes = [{
     meta: {}
   },
   {
-<<<<<<< HEAD
-    path: '/login',
-    name: 'Login',
-    component: () => import('../views/login/Login.vue'),
-    meta: {}
-  },
-  {
-    path: '/retrieve',
-    name: 'retrieve',
-    component: () => import('../views/login/RetrievePass.vue'),
-    meta: {
-
-    }
-  },
-  {
-    path: '/register',
-    name: 'register',
-    component: () => import('../views/login/Register.vue'),
-    meta: {
-      title: "考点专练",
-    }
-  },
-  {
-=======
->>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
     path: '/search',
     name: 'search',
     component: () => import('../views/search/search.vue'),
     meta: {}
   },
-<<<<<<< HEAD
-
-  { //考点专练
-=======
   {//考点专练
->>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
     path: '/examination-site',
     name: 'Examination-site',
     component: () => import('../views/practice/Examination-site.vue'),
@@ -142,7 +112,7 @@ const routes = [{
 
     }
   },
-  { //套卷练习
+  {//套卷练习
     path: '/set-up',
     name: 'Set-up',
     component: () => import('../views/practice/Set-up.vue'),
@@ -152,10 +122,10 @@ const routes = [{
       isShowleft: true,
       isTab: true,
       email: true,
-      isShowright: true //顶部搜索
+      isShowright:true //顶部搜索
     }
   },
-  { //仿真模考
+  {//仿真模考
     path: '/simulation-test',
     name: 'Simulation-test',
     component: () => import('../views/practice/Simulation-test.vue'),
@@ -165,12 +135,9 @@ const routes = [{
       isShowleft: true,
       isTab: false,
       email: true,
-      isShowright: true //顶部搜索
+      isShowright:true //顶部搜索
     }
   },
-<<<<<<< HEAD
-  { //错题练习
-=======
   //登录页面路由
   {
     path: '/login',
@@ -181,7 +148,6 @@ const routes = [{
     }
   },
   {//错题练习
->>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
     path: '/wrong-question-practice',
     name: 'Wrong-question-practice',
     component: () => import('../views/practice/Wrong-question-practice.vue'),
@@ -191,10 +157,10 @@ const routes = [{
       isShowleft: true,
       isTab: false,
       email: true,
-      isShowright: true //顶部搜索
+      isShowright:true //顶部搜索
     }
   },
-  { //测评记录
+  {//测评记录
     path: '/evaluation-record',
     name: 'Evaluation-record',
     component: () => import('../views/practice/Evaluation-record.vue'),
@@ -204,10 +170,10 @@ const routes = [{
       isShowleft: true,
       isTab: false,
       email: true,
-      isShowright: true //顶部搜索
+      isShowright:true //顶部搜索
     }
   },
-  { //习题收藏
+  {//习题收藏
     path: '/exercise-collection',
     name: 'Exercise-collection',
     component: () => import('../views/practice/Exercise-collection.vue'),
@@ -217,143 +183,9 @@ const routes = [{
       isShowleft: true,
       isTab: false,
       email: true,
-      isShowright: true //顶部搜索
+      isShowright:true //顶部搜索
     }
   },
-  {
-    path: '/attentiveTeacher',
-    name: 'AttentiveTeacher',
-    component: () => import('../views/User/AttentiveTeacher.vue'),
-    meta: {
-      title: "关注的老师",
-      isShow: true,
-      isShowleft: false,
-      isTab: true,
-      email: true,
-    }
-  },
-  {
-    path: '/myFavorite',
-    name: 'MyFavorite',
-    component: () => import('../views/User/MyFavorite.vue'),
-    meta: {
-      title: "我的收藏",
-      isShow: true,
-      isShowleft: false,
-      isTab: true,
-      email: true,
-    }
-  },
-  {
-    path: '/bookingClassOrder',
-    name: 'BookingClassOrder',
-    component: () => import('../views/User/BookingClassOrder.vue'),
-    meta: {
-      title: "课程订单",
-      isShow: true,
-      isShowleft: false,
-      isTab: true,
-      email: true,
-    }
-  },
-  {
-    path: '/memberOftheOrder',
-    name: 'MemberOftheOrder',
-    component: () => import('../views/User/MemberOftheOrder.vue'),
-    meta: {
-      title: "会员订单",
-      isShow: true,
-      isShowleft: false,
-      isTab: true,
-      email: true,
-    }
-  },
-  {
-    path: '/lessonAbouttheOrder',
-    name: 'LessonAbouttheOrder',
-    component: () => import('../views/User/LessonAbouttheOrder.vue'),
-    meta: {
-      title: "约课订单",
-      isShow: true,
-      isShowleft: false,
-      isTab: true,
-      email: true,
-    }
-  },
-  {
-    path: '/preferentialPrice',
-    name: 'PreferentialPrice',
-    component: () => import('../views/User/PreferentialPrice.vue'),
-    meta: {
-      title: "优惠券",
-      isShow: true,
-      isShowleft: false,
-      isTab: true,
-      email: true,
-    }
-  },
-  {
-    path: '/learningCard',
-    name: 'LearningCard',
-    component: () => import('../views/User/LearningCard.vue'),
-    meta: {
-      title: "学习卡",
-      isShow: true,
-      isShowleft: false,
-      isTab: true,
-      email: true,
-    }
-  },
-  {
-    path: '/member',
-    name: 'Member',
-    component: () => import('../views/User/Member.vue'),
-    meta: {
-      title: "会员",
-      isShow: true,
-      isShowleft: false,
-      isTab: true,
-      email: true,
-    }
-  },
-  {
-    path: '/myMessage',
-    name: 'MyMessage',
-    component: () => import('../views/User/MyMessage.vue'),
-    meta: {
-      title: "我的消息",
-      isShow: true,
-      isShowleft: false,
-      isTab: true,
-      email: true,
-    }
-  },
-  {
-    path: '/feedback',
-    name: 'Feedback',
-    component: () => import('../views/User/Feedback.vue'),
-    meta: {
-      title: "意见反馈",
-      isShow: true,
-      isShowleft: false,
-      isTab: true,
-      email: true,
-    }
-  },
-  {
-    path: '/set',
-    name: 'Set',
-    component: () => import('../views/User/Set.vue'),
-    meta: {
-      title: "意见反馈",
-      isShow: true,
-      isShowleft: false,
-      isTab: true,
-      email: true,
-    }
-  },
-<<<<<<< HEAD
-=======
 
 
 
@@ -363,28 +195,12 @@ const routes = [{
 
 
 
->>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes,
+  routes
 })
-<<<<<<< HEAD
-router.beforeEach((to, from, next) => {
-  let token = localStorage.getItem('token')
-  if (to.name == "Login") {
-    next()
-  } else {
-    if (token) {
-      next()
-    } else {
-      next('/login')
-    }
-  }
-})
-=======
 
->>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
 export default router
