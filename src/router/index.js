@@ -125,6 +125,14 @@ const routes = [{
       isShowright:true //顶部搜索
     }
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/login/Login.vue'),
+    meta: {
+      
+    }
+  },
   {//错题练习
     path: '/wrong-question-practice',
     name: 'Wrong-question-practice',

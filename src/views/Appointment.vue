@@ -12,7 +12,7 @@
       <div class="tab_mav_wrapper">
         <img src="xiaoren1.png" />
         <p>请登录后查看相关内容</p>
-        <van-button type="warning" @click="onLogin">登录/注册</van-button>
+        <van-button type="warning" @click="onLogin">{{btnTitle}}</van-button>
       </div>
     </div>
   </div>
@@ -23,12 +23,22 @@ export default {
   data() {
     return {
       active: "待上课",
+      btn_tit:'登录/注册',
     };
   },
   methods: {
     onLogin() {
       this.$router.push("/login");
     },
+  },
+  computed: {
+    btnTitle(){
+      if (localStorage.getItem('token')) {
+        return '立即约课'
+      }else{
+        return '登录/注册'
+      }
+    }
   },
 };
 </script>
