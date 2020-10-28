@@ -86,65 +86,7 @@ const routes = [{
     component: () => import('../views/search/search.vue'),
     meta: {}
   },
-  {
-    path: '/kaodianZL',
-    name: 'kaodianZL',
-    component: () => import('../views/lianxiRoutes/kaodianZL.vue'),
-    meta: {
-      isShow: true,
-      title: '考点专练',
-      isShowleft: true,
-    }
-  },
-  {
-    path: '/taojvanLX',
-    name: 'taojvanLX',
-    component: () => import('../views/lianxiRoutes/taojvanLX.vue'),
-    meta: {
-      isShow: true,
-      title: '套卷练习',
-      isShowleft: true,
-    }
-  },
-  {
-    path: '/mokaoFZ',
-    name: 'mokaoFZ',
-    component: () => import('../views/lianxiRoutes/mokaoFZ.vue'),
-    meta: {
-      isShow: true,
-      title: '仿真模考',
-      isShowleft: true,
-    }
-  },
-  {
-    path: '/cuotiLX',
-    name: 'cuotiLX',
-    component: () => import('../views/lianxiRoutes/cuotiLX.vue'),
-    meta: {
-      isShow: true,
-      title: '错题练习',
-      isShowleft: true,
-    }
-  }, {
-    path: '/cepingJL',
-    name: 'cepingJL',
-    component: () => import('../views/lianxiRoutes/cepingJL.vue'),
-    meta: {
-      isShow: true,
-      title: '测评记录',
-      isShowleft: true,
-    }
-  }, {
-    path: '/shoucang',
-    name: 'shoucang',
-    component: () => import('../views/lianxiRoutes/shoucang.vue'),
-    meta: {
-      isShow: true,
-      title: '习题收藏',
-      isShowleft: true,
-    }
-  },
-
+  
   {//考点专练
     path: '/examination-site',
     name: 'Examination-site',

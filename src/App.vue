@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar/>
+    <Navbar class="lzh-nav"/>
     <router-view />
     <BottomBar>
       <BottomBox path="/">
