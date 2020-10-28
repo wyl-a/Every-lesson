@@ -76,7 +76,7 @@
     <div class="lzh-title-box">
       <div class="lzh-container" v-for="(item, index) in list" :key="index">
         <div class="lzh-teseke">
-          <p>{{ item.title }}</p>
+          <p style="margin-left:0.4rem">{{ item.title }}</p>
           <van-image
             round
             width="1rem"
