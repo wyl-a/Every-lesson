@@ -4,8 +4,8 @@
         <div class="wpf-simulation-test-top">
             <van-dropdown-menu>
                 <van-dropdown-item v-model="value1" :options="option1" title="类型不限"/>
-                <van-dropdown-item v-model="value2" disabled  :options="option2" title="巩固全部错题"/>
-                <van-dropdown-item v-model="value3" disabled  :options="option3" title="移出错题"/>
+                <van-dropdown-item disabled title="巩固全部错题"/>
+                <van-dropdown-item disabled title="移出错题"/>
             </van-dropdown-menu>
         </div>
 

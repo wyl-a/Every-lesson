@@ -24,17 +24,17 @@
             return {
                 value1: 'a',
                 value2: 'b',
-                value2: 'c',
+                value3: 'c',
                 option1: [
-                    { text: '全部', value: 'a' },
-                    { text: '模拟考试', value: 'a1' },
-                    { text: '正式考试', value: 'a2' },
+                    { text: '全部', value: 'a1' },
+                    { text: '模拟考试', value: 'a2' },
+                    { text: '正式考试', value: 'a3' },
                 ],
                 option2: [
-                    { text: '全部', value: 'b' },
-                    { text: '未开始', value: 'b1' },
-                    { text: '进行中', value: 'b2' },
-                    { text: '已结束', value: 'b3' },
+                    { text: '全部', value: 'b1' },
+                    { text: '未开始', value: 'b2' },
+                    { text: '进行中', value: 'b3' },
+                    { text: '已结束', value: 'b4' },
                 ],
                 option3: [
                     { text: '全部', value: 'c1' },
