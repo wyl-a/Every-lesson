@@ -91,7 +91,20 @@ const routes = [{
     name: 'Examination-site',
     component: () => import('../views/practice/Examination-site.vue'),
     meta: {
-      title: "考点专练",
+      title: "题库选择",
+      isShow: true,
+      isShowleft: true,
+      isTab: true,
+      email: true,
+
+    }
+  },
+  {//学习日历
+    path: '/rili',
+    name: 'Rili',
+    component: () => import('../views/rili/rili.vue'),
+    meta: {
+      title: "学习日历",
       isShow: true,
       isShowleft: true,
       isTab: true,

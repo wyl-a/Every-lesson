@@ -37,7 +37,6 @@
               <van-button
                 type="danger"
                 style="background: #eb6100; color: #fff"
-                @click="onConfirm"
               >
                 确认
               </van-button>
@@ -112,9 +111,6 @@ export default {
     });
   },
   methods: {
-    onConfirm() {
-      this.$refs.item.toggle();
-    },
   },
 };
 </script>
