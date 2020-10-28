@@ -31,20 +31,7 @@
             :show-confirm="false"
             :style="{ height: '500px' }"
           />
-           <div class="lzh-butbox">
-              <van-button
-                type="danger"
-                style="background: #fff; color: #000; border: 1px solid #d9d9d9"
-                >重置</van-button
-              >
-              <van-button
-                type="danger"
-                style="background: #eb6100; color: #fff"
-
-              >
-                确认
-              </van-button>
-            </div>
+           
         </div>
 
         <div class="zmb_time_btns">
@@ -147,20 +134,10 @@
                 </div>
               </div>
             </div>
-            <div class="lzh-butbox">
-              <van-button
-                type="danger"
-                style="background: #fff; color: #000; border: 1px solid #d9d9d9"
-                >重置</van-button
-              >
-              <van-button
-                type="danger"
-                style="background: #eb6100; color: #fff"
-
-              >
-                确认
-              </van-button>
-            </div>
+            <div class="zmb_time_btns">
+          <div class="zmb_time_btns_reset">重置</div>
+          <div class="zmb_time_btns_submit">确定</div>
+        </div>
       </li>
     </ul>
   </div>
