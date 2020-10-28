@@ -78,7 +78,6 @@
         <div class="lzh-teseke">
           <p>{{item.title}}</p>
           <div>
-            {{item.teachers_list.teacher_name}}
           </div>
         </div>
       </div>
@@ -105,7 +104,6 @@ export default {
     this.$APP.course().then((res) => {
       console.log(res.data.data.list);
       this.list = res.data.data.list;
-      
 ;
     });
   },
