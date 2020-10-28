@@ -9,7 +9,7 @@ const apl = {
         //轮播图路径
         Banner: '/banner',
         //首页列表老师
-        GETteacher: '/recommend/appIndex',
+        GETteacher: '/api/app/recommend/appIndex',
         //登录
         Login:"/api/app/login",
     }
