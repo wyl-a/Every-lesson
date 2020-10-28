@@ -114,7 +114,7 @@ const routes = [{
     name: 'Examination-site',
     component: () => import('../views/practice/Examination-site.vue'),
     meta: {
-      title: "考点专练",
+      title: "题库选择",
       isShow: true,
       isShowleft: true,
       isTab: true,
