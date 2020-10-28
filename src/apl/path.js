@@ -7,7 +7,7 @@ const apl = {
     //接口路径
     URL: {
         //轮播图路径
-      Banner:'/banner',
+      Banner:'/api/app/banner',
 
         //首页列表老师
         GETteacher:'/api/app/recommend/appIndex',

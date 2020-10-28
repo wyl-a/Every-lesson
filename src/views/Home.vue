@@ -34,7 +34,7 @@
     </div>
     <!-- 名师阵容 -->
     <section>
-      <FTtitle></FTtitle>
+      <FTtitle :title="list[0].channel_info.name"></FTtitle>
       <div class="zmb_FT_item">
         <div
           class="wpf_FT_item_img"
@@ -56,7 +56,7 @@
     </section>
     <!-- 推荐课程 -->
     <section>
-      <FTtitle></FTtitle>
+      <FTtitle :title="list[1].channel_info.name"></FTtitle>
       <div
         class="zmb_FT_item_tuijian"
         v-for="(item, index) in showlist"
@@ -75,7 +75,7 @@
     </section>
     <!-- 明星讲师 -->
     <section>
-      <FTtitle></FTtitle>
+      <FTtitle :title="list[4].channel_info.name"></FTtitle>
       <div class="zmb_FT_item">
         <div
           class="wpf_FT_item_img"
@@ -111,12 +111,14 @@ export default {
   },
   data() {
     return {
+      //轮播图片
       bannerImgs: [
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20197Cxc53hktC1569839552.jpg",
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019MGNW3BtiS91569839576.jpg",
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019LnKumseuhw1569839569.jpg",
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20193KAjU2cB6h1569839562.jpg",
       ],
+      list:[],
       lists: [],
       showlist: [],
       islist: [],
@@ -132,13 +134,13 @@ export default {
     },
   },
   mounted() {
+    //获取首页列表数据
     this.$APP.getteacher().then((res) => {
+      this.list=res.data.data;
       console.log(res.data.data);
       this.lists = res.data.data[0].list;
       this.showlist = res.data.data[1].list;
-      // console.log(this.showlist)
       this.islist = res.data.data[4].list;
-      console.log(this.islist);
     });
   },
 };

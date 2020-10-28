@@ -1,12 +1,16 @@
 <template>
   <div>
-      <p class="FT_title">精品课堂</p>
+      <p class="FT_title">{{title}}</p>
   </div>
 </template>
 
 <script>
 export default {
-
+  props:{
+    title:{
+      type:String,
+    }
+  }
 }
 </script>
 
