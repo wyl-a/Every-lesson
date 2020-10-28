@@ -108,6 +108,7 @@ Vue.use(Lazyload);
 export default {
   components: {
     FTtitle,
+    
   },
   data() {
     return {
@@ -118,12 +119,14 @@ export default {
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019LnKumseuhw1569839569.jpg",
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20193KAjU2cB6h1569839562.jpg",
       ],
+      //分类标题
       listtitle1:'',
       listtitle2:'',
       listtitle3:'',
       lists: [],
       showlist: [],
       islist: [],
+    
     };
   },
   mounted() {},

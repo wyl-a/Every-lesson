@@ -81,37 +81,11 @@ const routes = [{
     meta: {}
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: () => import('../views/login/Login.vue'),
-    meta: {}
-  },
-<<<<<<< HEAD
-=======
-  {
-    path: '/retrieve',
-    name: 'retrieve',
-    component: () => import('../views/login/RetrievePass.vue'),
-    meta: {
-     
-  }
-  },
-  {
-    path: '/register',
-    name: 'register',
-    component: () => import('../views/login/Register.vue'),
-    meta: {
-      title: "考点专练",
-    }
-  },
-  {
     path: '/search',
     name: 'search',
     component: () => import('../views/search/search.vue'),
     meta: {}
   },
-  
->>>>>>> 71e0ec2db22568b4719935e3ecdb48fb5abca87b
   {//考点专练
     path: '/examination-site',
     name: 'Examination-site',
@@ -190,7 +164,15 @@ const routes = [{
       isShowright:true //顶部搜索
     }
   },
-  
+
+
+
+
+
+
+
+
+
 ]
 
 const router = new VueRouter({
@@ -198,16 +180,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-router.beforeEach((to,from,next)=>{
-   let token  = localStorage.getItem('token')
-   if(to.name=="Login"){
-     next()
-   }else{
-       if(token){
-          next()
-       }else{
-         next('/login')
-       }
-   }
-})
+
 export default router
