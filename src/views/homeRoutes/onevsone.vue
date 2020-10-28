@@ -20,7 +20,6 @@
       </div>
     </div>
 
-
     <ul>
       <li :class="n != 1 ? 'none' : ''" class="zmb_time">
         <div class="zmb_time_calendar">
@@ -56,87 +55,87 @@
       </li>
       <li :class="n != 2 ? 'none' : ''" class="zmb_list">
         <div class="lzh-contbox">
-              <div class="lzh-contai">
-                <p>老师类型</p>
-                <div class="lzh-containera">
-                  <span>M1</span>
-                  <span>M2</span>
-                  <span>M3</span>
-                  <span>M4</span>
-                  <span>M5</span>
-                  <span>M6</span>
-                  <span>M7</span>
-                  <span>M8</span>
-                  <span>M9</span>
-                  <span>M10</span>
-                  <span>M11</span>
-                  <span>M12</span>
-                  <span>M13</span>
-                  <span>M14</span>
-                  <span>M15</span>
-                  <span>M16</span>
-                  <span>M17</span>
-                  <span>M18</span>
-                  <span>M19</span>
-                  <span>M20</span>
-                </div>
-              </div>
+          <div class="lzh-contai">
+            <p>老师类型</p>
+            <div class="lzh-containera">
+              <span>M1</span>
+              <span>M2</span>
+              <span>M3</span>
+              <span>M4</span>
+              <span>M5</span>
+              <span>M6</span>
+              <span>M7</span>
+              <span>M8</span>
+              <span>M9</span>
+              <span>M10</span>
+              <span>M11</span>
+              <span>M12</span>
+              <span>M13</span>
+              <span>M14</span>
+              <span>M15</span>
+              <span>M16</span>
+              <span>M17</span>
+              <span>M18</span>
+              <span>M19</span>
+              <span>M20</span>
             </div>
-            <div class="lzh-contbox">
-              <div class="lzh-contai">
-                <p>只看</p>
-                <div class="lzh-containera">
-                  <van-checkbox v-model="checked">已关注</van-checkbox>
-                  <van-checkbox v-model="checkedr" style="margin-left:10px">上过课</van-checkbox>
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="lzh-contbox">
+          <div class="lzh-contai">
+            <p>只看</p>
+            <div class="lzh-containera">
+              <van-checkbox v-model="checked">已关注</van-checkbox>
+              <van-checkbox v-model="checkedr" style="margin-left: 10px"
+                >上过课</van-checkbox
+              >
             </div>
-            <div class="lzh-contbox">
-              <div class="lzh-contai">
-                <p>性别</p>
-                <div class="lzh-containera">
-                  <span>男</span>
-                  <span>女</span>
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="lzh-contbox">
+          <div class="lzh-contai">
+            <p>性别</p>
+            <div class="lzh-containera">
+              <span>男</span>
+              <span>女</span>
             </div>
-            <div class="lzh-contbox">
-              <div class="lzh-contai">
-                <p>年级</p>
-                <div class="lzh-containera">
-                  <span>小学一年级</span>
-                  <span>小学二年级</span>
-                  <span>小学三年级</span>
-                  <span>小学四年级</span>
-                  <span>小学五年级</span>
-                  <span>小学六年级</span>
-                  <span>初一</span>
-                  <span>初二</span>
-                  <span>初三</span>
-                  <span>高一</span>
-                  <span>高二</span>
-                  <span>高三</span>
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="lzh-contbox">
+          <div class="lzh-contai">
+            <p>年级</p>
+            <div class="lzh-containera">
+              <span>小学一年级</span>
+              <span>小学二年级</span>
+              <span>小学三年级</span>
+              <span>小学四年级</span>
+              <span>小学五年级</span>
+              <span>小学六年级</span>
+              <span>初一</span>
+              <span>初二</span>
+              <span>初三</span>
+              <span>高一</span>
+              <span>高二</span>
+              <span>高三</span>
             </div>
-            <div class="lzh-contbox">
-              <div class="lzh-contai">
-                <p>学科</p>
-                <div class="lzh-containera">
-                  <span>语文</span>
-                  <span>数学</span>
-                  <span>英语</span>
-                  <span>物理</span>
-                  <span>化学</span>
-                  <span>生物</span>
-                  <span>信息技术</span>
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="lzh-contbox">
+          <div class="lzh-contai">
+            <p>学科</p>
+            <div class="lzh-containera">
+              <span>语文</span>
+              <span>数学</span>
+              <span>英语</span>
+              <span>物理</span>
+              <span>化学</span>
+              <span>生物</span>
+              <span>信息技术</span>
             </div>
-          
-            <div style="height:1.6rem"></div>
-          <div class="zmb_time_btns">
-
+          </div>
+        </div>
+        <div style="height: 1.6rem"></div>
+        <div class="zmb_time_btns">
           <div class="zmb_time_btns_reset">重置</div>
           <div class="zmb_time_btns_submit">确定</div>
         </div>
@@ -149,7 +148,7 @@
 export default {
   data() {
     return {
-       checked: false,
+      checked: false,
       checkedr: false,
       minDate: new Date(2020, 9, 20),
       maxDate: new Date(2020, 9, 31),
