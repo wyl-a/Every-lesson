@@ -56,7 +56,7 @@ const routes = [{
     component: () => import('../views/User.vue'),
     meta: {
       title: "我的",
-      isShow: true,
+      isShow: false,
       isShowleft: false,
       isTab: true,
       email: true,
