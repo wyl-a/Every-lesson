@@ -16,7 +16,10 @@
 
 <script>
 export default {
+
+
   methods: {
+
     up() {
       this.$router.go(-1);
     },
@@ -31,10 +34,12 @@ export default {
     isShowleft() {
       return this.$route.meta.isShowleft;
     },
+
+
     isShowright() {
       return this.$route.meta.isShowright;
     },
-  },
+  }
 };
 </script>
 

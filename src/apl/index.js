@@ -11,10 +11,12 @@ const APP = {
     getteacher() {
         return request(apl.METHODS.GET, apl.URL.GETteacher, {});
     },
+    course(){
+        return request(apl.METHODS.GET,apl.URL.course)
+    },
     login(params) {
         return request(apl.METHODS.POST, apl.URL.Login,params);
     }
-
 }
 
 export default APP
