@@ -34,7 +34,7 @@
     </div>
     <!-- 名师阵容 -->
     <section>
-      <FTtitle :title="list[0].channel_info.name"></FTtitle>
+      <FTtitle :title="listtitle1"></FTtitle>
       <div class="zmb_FT_item">
         <div
           class="wpf_FT_item_img"
@@ -56,7 +56,7 @@
     </section>
     <!-- 推荐课程 -->
     <section>
-      <FTtitle :title="list[1].channel_info.name"></FTtitle>
+      <FTtitle :title="listtitle2"></FTtitle>
       <div
         class="zmb_FT_item_tuijian"
         v-for="(item, index) in showlist"
@@ -75,7 +75,7 @@
     </section>
     <!-- 明星讲师 -->
     <section>
-      <FTtitle :title="list[4].channel_info.name"></FTtitle>
+      <FTtitle :title="listtitle3"></FTtitle>
       <div class="zmb_FT_item">
         <div
           class="wpf_FT_item_img"
@@ -108,6 +108,7 @@ Vue.use(Lazyload);
 export default {
   components: {
     FTtitle,
+    
   },
   data() {
     return {
@@ -118,10 +119,14 @@ export default {
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019LnKumseuhw1569839569.jpg",
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20193KAjU2cB6h1569839562.jpg",
       ],
-      list:[],
+      //分类标题
+      listtitle1:'',
+      listtitle2:'',
+      listtitle3:'',
       lists: [],
       showlist: [],
       islist: [],
+    
     };
   },
   mounted() {},
@@ -136,7 +141,9 @@ export default {
   mounted() {
     //获取首页列表数据
     this.$APP.getteacher().then((res) => {
-      this.list=res.data.data;
+      this.listtitle1=res.data.data[0].channel_info.name;
+      this.listtitle2=res.data.data[1].channel_info.name;
+      this.listtitle3=res.data.data[4].channel_info.name;
       console.log(res.data.data);
       this.lists = res.data.data[0].list;
       this.showlist = res.data.data[1].list;
