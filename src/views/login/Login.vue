@@ -1,4 +1,5 @@
 <template>
+  <!-- 密码登录 -->
   <div class="wyl_login">
     <div class="wyl_login_img">
       <img src="../../assets/Login/login.png" alt="" />
@@ -27,7 +28,7 @@
       </div>
     </div>
     <div class="wyl_login_button">
-      <button>登录</button>
+      <button @click="onClickLogin">登录</button>
     </div>
   </div>
 </template>
@@ -49,6 +50,22 @@ export default {
     },
     onRegister() {
       this.$router.push("/register");
+    },
+    //登录
+    onClickLogin() {
+      this.$APP
+        .login({
+          mobile: this.username,
+          password: this.password,
+          type: 1,
+        })
+        .then((res) => {
+          console.log(res);
+          console.log(res.data.data.remember_token);
+          let token =res.data.data.remember_token
+          window.localStorage.setItem("token",token)
+          this.$router.push('/user')
+        });
     },
   },
 };
