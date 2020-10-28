@@ -138,6 +138,7 @@ const routes = [{
       isShowright:true //顶部搜索
     }
   },
+  //登录页面路由
   {
     path: '/login',
     name: 'login',

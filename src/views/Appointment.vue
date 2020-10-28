@@ -28,7 +28,12 @@ export default {
   },
   methods: {
     onLogin() {
-      this.$router.push("/login");
+      if (localStorage.getItem('token')) {
+        this.$router.push("/onevsone");
+      }else{
+        this.$router.push("/login");
+      }
+      
     },
   },
   computed: {
