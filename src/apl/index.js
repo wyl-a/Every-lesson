@@ -11,6 +11,9 @@ const APP = {
     getteacher(){
       return  request(apl.METHODS.GET,apl.URL.GETteacher,{});
     },
+    course(){
+        return request(apl.METHODS.GET,apl.URL.course)
+    }
 }
 
 export default APP

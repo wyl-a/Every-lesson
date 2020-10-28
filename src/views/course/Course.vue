@@ -74,7 +74,14 @@
       </van-col>
     </van-row>
     <div class="lzh-title-box">
-      <div class="lzh-container" v-for="i in 10" :key="i"></div>
+      <div class="lzh-container" v-for="(item, index) in list" :key="index">
+        <div class="lzh-teseke">
+          <p>{{item.title}}</p>
+          <div>
+            {{item.teachers_list.teacher_name}}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -91,7 +98,16 @@ export default {
         { text: "价格从低到高", value: 3 },
         { text: "价格从高到低", value: 4 },
       ],
+      list: [], //列表数据
     };
+  },
+  mounted() {
+    this.$APP.course().then((res) => {
+      console.log(res.data.data.list);
+      this.list = res.data.data.list;
+      
+;
+    });
   },
   methods: {
     onConfirm() {
@@ -123,7 +139,8 @@ export default {
   width: 100%;
   height: 6rem;
   background: #fff;
-  margin-top: 0.2rem;
+  border-radius: 5px;
+  margin-top: 0.5rem;
   display: inline-flex;
   justify-content: left;
   align-items: center;
@@ -156,5 +173,10 @@ export default {
   padding: 0.5rem;
   background: #f0f2f5;
 }
-
+.lzh-teseke {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>
