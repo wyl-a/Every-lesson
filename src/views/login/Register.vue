@@ -1,4 +1,5 @@
 <template>
+<!-- 手机验证登录 -->
   <div>
     <div class="wyl_login_img">
       <img src="../../assets/Login/login.png" alt="" />
