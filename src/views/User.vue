@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .wyl_user_topImg{
   width: 100%;
   height: 6rem;

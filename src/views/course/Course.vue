@@ -76,9 +76,14 @@
     <div class="lzh-title-box">
       <div class="lzh-container" v-for="(item, index) in list" :key="index">
         <div class="lzh-teseke">
-          <p>{{item.title}}</p>
-          <div>
-          </div>
+          <p>{{ item.title }}</p>
+          <van-image
+            round
+            width="1rem"
+            height="1rem"
+            :src="item.cover_img"
+          />
+          <div></div>
         </div>
       </div>
     </div>
@@ -104,7 +109,6 @@ export default {
     this.$APP.course().then((res) => {
       console.log(res.data.data.list);
       this.list = res.data.data.list;
-;
     });
   },
   methods: {
@@ -173,8 +177,11 @@ export default {
 }
 .lzh-teseke {
   width: 100%;
+  height: 100%;
   display: inline-flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
 }
+
 </style>
