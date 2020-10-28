@@ -87,7 +87,7 @@
                 <p>只看</p>
                 <div class="lzh-containera">
                   <van-checkbox v-model="checked">已关注</van-checkbox>
-                  <van-checkbox v-model="checkedr">上过课</van-checkbox>
+                  <van-checkbox v-model="checkedr" style="margin-left:10px">上过课</van-checkbox>
                 </div>
               </div>
             </div>

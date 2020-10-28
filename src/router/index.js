@@ -56,7 +56,7 @@ const routes = [{
     component: () => import('../views/User.vue'),
     meta: {
       title: "我的",
-      isShow: true,
+      isShow: false,
       isShowleft: false,
       isTab: true,
       email: true,
@@ -100,12 +100,12 @@ const routes = [{
     name: 'Retrieve',
     component: () => import('../views/login/RetrievePass.vue'),
     meta: {
-      title: "找回密码",  //标题
-      isShow: true,  //顶部导航
-      isShowleft: true,  //顶部返回
+      title: "找回密码", //标题
+      isShow: true, //顶部导航
+      isShowleft: true, //顶部返回
       isTab: false, //底部导航
       email: true, //邮箱
-      isShowright:false //顶部搜索
+      isShowright: false //顶部搜索
     }
   },
   //注册 
@@ -121,8 +121,7 @@ const routes = [{
     path: '/search',
     name: 'search',
     component: () => import('../views/search/search.vue'),
-    meta: {
-    }
+    meta: {}
   },
 ]
 
@@ -130,6 +129,20 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+//路由守卫
+router.beforeEach((to, from, next) => {
+  let token = localStorage.getItem('token')
+  console.log(token)
+  if (to.name == "Login") {
+    next()
+  } else {
+    if (token) {
+      next()
+    } else {
+      next('/login')
+    }
+  }
 })
 
 export default router
