@@ -86,6 +86,7 @@
         </div>
       </div>
     </div>
+    <div class="box"></div>
   </div>
 </template>
 
@@ -179,5 +180,8 @@ export default {
   flex-wrap: wrap;
   align-items: center;
 }
-
+.box{
+  width: 100%;
+  height: 2.6rem;
+}
 </style>

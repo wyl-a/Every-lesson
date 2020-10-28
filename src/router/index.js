@@ -9,7 +9,7 @@ const routes = [{
     component: () => import('../views/Home.vue'),
     meta: {
       title: "首页",
-      isShow: true,
+      isShow: false,
       isTab: true,
       email: true,
     }
@@ -81,7 +81,6 @@ const routes = [{
     meta: {}
   },
   {
-<<<<<<< HEAD
     path: '/login',
     name: 'Login',
     component: () => import('../views/login/Login.vue'),
@@ -104,19 +103,13 @@ const routes = [{
     }
   },
   {
-=======
->>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
     path: '/search',
     name: 'search',
     component: () => import('../views/search/search.vue'),
     meta: {}
   },
-<<<<<<< HEAD
-
   { //考点专练
-=======
-  {//考点专练
->>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
+
     path: '/examination-site',
     name: 'Examination-site',
     component: () => import('../views/practice/Examination-site.vue'),
@@ -129,7 +122,7 @@ const routes = [{
 
     }
   },
-  {//学习日历
+  { //学习日历
     path: '/rili',
     name: 'Rili',
     component: () => import('../views/rili/rili.vue'),
@@ -168,20 +161,16 @@ const routes = [{
       isShowright: true //顶部搜索
     }
   },
-<<<<<<< HEAD
-  { //错题练习
-=======
-  //登录页面路由
   {
+    //登录页面路由
     path: '/login',
     name: 'login',
     component: () => import('../views/login/Login.vue'),
     meta: {
-      
+
     }
   },
-  {//错题练习
->>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
+  { //错题练习
     path: '/wrong-question-practice',
     name: 'Wrong-question-practice',
     component: () => import('../views/practice/Wrong-question-practice.vue'),
@@ -227,7 +216,7 @@ const routes = [{
     meta: {
       title: "关注的老师",
       isShow: true,
-      isShowleft: false,
+      isShowleft: true,
       isTab: true,
       email: true,
     }
@@ -239,7 +228,7 @@ const routes = [{
     meta: {
       title: "我的收藏",
       isShow: true,
-      isShowleft: false,
+      isShowleft: true,
       isTab: true,
       email: true,
     }
@@ -251,7 +240,7 @@ const routes = [{
     meta: {
       title: "课程订单",
       isShow: true,
-      isShowleft: false,
+      isShowleft: true,
       isTab: true,
       email: true,
     }
@@ -263,7 +252,7 @@ const routes = [{
     meta: {
       title: "会员订单",
       isShow: true,
-      isShowleft: false,
+      isShowleft: true,
       isTab: true,
       email: true,
     }
@@ -275,7 +264,7 @@ const routes = [{
     meta: {
       title: "约课订单",
       isShow: true,
-      isShowleft: false,
+      isShowleft: true,
       isTab: true,
       email: true,
     }
@@ -287,7 +276,7 @@ const routes = [{
     meta: {
       title: "优惠券",
       isShow: true,
-      isShowleft: false,
+      isShowleft: true,
       isTab: true,
       email: true,
     }
@@ -299,7 +288,7 @@ const routes = [{
     meta: {
       title: "学习卡",
       isShow: true,
-      isShowleft: false,
+      isShowleft: true,
       isTab: true,
       email: true,
     }
@@ -311,7 +300,7 @@ const routes = [{
     meta: {
       title: "会员",
       isShow: true,
-      isShowleft: false,
+      isShowleft: true,
       isTab: true,
       email: true,
     }
@@ -323,7 +312,7 @@ const routes = [{
     meta: {
       title: "我的消息",
       isShow: true,
-      isShowleft: false,
+      isShowleft: true,
       isTab: true,
       email: true,
     }
@@ -335,7 +324,7 @@ const routes = [{
     meta: {
       title: "意见反馈",
       isShow: true,
-      isShowleft: false,
+      isShowleft: true,
       isTab: true,
       email: true,
     }
@@ -347,23 +336,11 @@ const routes = [{
     meta: {
       title: "意见反馈",
       isShow: true,
-      isShowleft: false,
+      isShowleft: true,
       isTab: true,
       email: true,
     }
   },
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-
-
->>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
 ]
 
 const router = new VueRouter({
@@ -371,7 +348,6 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 })
-<<<<<<< HEAD
 router.beforeEach((to, from, next) => {
   let token = localStorage.getItem('token')
   if (to.name == "Login") {
@@ -384,7 +360,5 @@ router.beforeEach((to, from, next) => {
     }
   }
 })
-=======
 
->>>>>>> 99d911c0345d3bde23d33ac2e1853050e57c8b86
 export default router

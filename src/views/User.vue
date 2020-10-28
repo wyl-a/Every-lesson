@@ -14,7 +14,7 @@
                 <div>杨狗蛋</div>
                 <van-icon name="edit" />
               </div>
-              <div class="wyl_user_personage_box_top_button">去约课</div>
+              <div class="wyl_user_personage_box_top_button" @click="onevsone">去约课</div>
             </div>
           </div>
 
@@ -194,6 +194,11 @@ export default {
       ],
     };
   },
+  methods:{
+    onevsone(){
+    this.$router.push("/onevsone")
+    }
+  }
 };
 </script>
 
