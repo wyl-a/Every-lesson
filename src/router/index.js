@@ -165,6 +165,15 @@ const routes = [{
       isShowright:true //顶部搜索
     }
   },
+
+
+
+
+
+
+
+
+
 ]
 
 const router = new VueRouter({
