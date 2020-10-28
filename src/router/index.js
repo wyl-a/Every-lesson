@@ -56,7 +56,11 @@ const routes = [{
     component: () => import('../views/User.vue'),
     meta: {
       title: "我的",
+<<<<<<< HEAD
       isShow: true,
+=======
+      isShow: false,
+>>>>>>> 467b20a320661c6e5da88661a2d79d8b250afd70
       isShowleft: false,
       isTab: true,
       email: true,
@@ -74,17 +78,59 @@ const routes = [{
       isTab: false,
     }
   },
+  //邮箱
   {
     path: '/email',
     name: 'email',
     component: () => import('../views/mailBox/email.vue'),
+<<<<<<< HEAD
     meta: {}
+=======
+    meta: {
+      isTab: false,
+      email: false,
+    }
+  },
+  //登录
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/login/Login.vue'),
+    meta: {
+      isTab: false,
+      email: true,
+    }
+  },
+  //找回密码
+  {
+    path: '/retrieve',
+    name: 'Retrieve',
+    component: () => import('../views/login/RetrievePass.vue'),
+    meta: {
+      title: "找回密码", //标题
+      isShow: true, //顶部导航
+      isShowleft: true, //顶部返回
+      isTab: false, //底部导航
+      email: true, //邮箱
+      isShowright: false //顶部搜索
+    }
+  },
+  //注册 
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('../views/login/Register.vue'),
+    meta: {
+      email: true, //邮箱
+    }
+>>>>>>> 467b20a320661c6e5da88661a2d79d8b250afd70
   },
   {
     path: '/search',
     name: 'search',
     component: () => import('../views/search/search.vue'),
     meta: {}
+<<<<<<< HEAD
   },
   {
     path: '/kaodianZL',
@@ -143,6 +189,8 @@ const routes = [{
       title: '习题收藏',
       isShowleft: true,
     }
+=======
+>>>>>>> 467b20a320661c6e5da88661a2d79d8b250afd70
   },
 ]
 
@@ -150,6 +198,20 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+//路由守卫
+router.beforeEach((to, from, next) => {
+  let token = localStorage.getItem('token')
+  console.log(token)
+  if (to.name == "Login") {
+    next()
+  } else {
+    if (token) {
+      next()
+    } else {
+      next('/login')
+    }
+  }
 })
 
 export default router

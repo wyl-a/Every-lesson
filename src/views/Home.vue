@@ -155,13 +155,14 @@ export default {
 body {
   width: 100%;
   height: 100%;
-  background: #f0f2f5;
+  background: #eee;
 }
 
 .zmb_index {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: #eee;
 }
 
 .my-swipe .van-swipe-item {
@@ -215,6 +216,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+
 }
 
 .zmb_FT_item div {
@@ -223,9 +225,7 @@ body {
   background: #fff;
   border-radius: 10px;
   margin: 0.3rem;
-}
-.zmb_FT_item_tuijian div {
-  /*height: 8rem;*/
+
 }
 .wpf_FT_item_img {
   width: 100%;
@@ -233,6 +233,7 @@ body {
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
+
 }
 .wpf_FT_name {
   font-size: 12px;

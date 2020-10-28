@@ -1,63 +1,65 @@
 <template>
+  <div>
     <div>
-        <div>
-            <van-tabs v-model="active"
-                      color="red"
-                      title-active-color="red">
-                <van-tab name="待上课" title="待上课"></van-tab>
-                <van-tab name="已上课" title="已上课"></van-tab>
-                <van-tab name="已取消" title="已取消"></van-tab>
-            </van-tabs>
-        </div>
-
-        <div class="tab_mav_container">
-            <div class="tab_mav_wrapper">
-                <img src="xiaoren1.png">
-                <p>请登录后查看相关内容</p>
-                <van-button type="warning">登录/注册</van-button>
-            </div>
-        </div>
+      <van-tabs v-model="active" color="red" title-active-color="red">
+        <van-tab name="待上课" title="待上课"></van-tab>
+        <van-tab name="已上课" title="已上课"></van-tab>
+        <van-tab name="已取消" title="已取消"></van-tab>
+      </van-tabs>
     </div>
+
+    <div class="tab_mav_container">
+      <div class="tab_mav_wrapper">
+        <img src="xiaoren1.png" />
+        <p>请登录后查看相关内容</p>
+        <van-button type="warning" @click="onLogin">登录/注册</van-button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                active: '待上课',
-            }
-        },
-        methods: {}
-    }
+export default {
+  data() {
+    return {
+      active: "待上课",
+    };
+  },
+  methods: {
+    onLogin() {
+      this.$router.push("/login");
+    },
+  },
+};
 </script>
 
 <style scoped>
-    .tab_mav_container {
-        width: 100vw;
-        height: 90vh;
-        background-color: #F0F2F5;
-        /*display: inline-flex;*/
-        /*justify-content: center;*/
-        /*align-items: center;*/
-    }
+.tab_mav_container {
+  width: 100vw;
+  height: 90vh;
+  background-color: #f0f2f5;
+  /*display: inline-flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+}
 
-    .tab_mav_wrapper {
-        width: 100%;
-        height: 100%;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column;
-    }
+.tab_mav_wrapper {
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
 
-    .tab_mav_wrapper img {
-        width: 50%;
-    }
-    .tab_mav_wrapper p {
-        font-size: 12px;
-        color: #333;
-    }
-    .van-button{
-        margin-top: 0.5rem;
-    }
+.tab_mav_wrapper img {
+  width: 50%;
+}
+.tab_mav_wrapper p {
+  font-size: 12px;
+  color: #333;
+}
+.van-button {
+  margin-top: 0.5rem;
+}
 </style>

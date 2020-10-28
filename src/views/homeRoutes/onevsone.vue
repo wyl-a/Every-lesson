@@ -31,7 +31,10 @@
             :show-confirm="false"
             :style="{ height: '500px' }"
           />
+<<<<<<< HEAD
            
+=======
+>>>>>>> 467b20a320661c6e5da88661a2d79d8b250afd70
         </div>
 
         <div class="zmb_time_btns">
@@ -88,7 +91,7 @@
                 <p>只看</p>
                 <div class="lzh-containera">
                   <van-checkbox v-model="checked">已关注</van-checkbox>
-                  <van-checkbox v-model="checkedr">上过课</van-checkbox>
+                  <van-checkbox v-model="checkedr" style="margin-left:10px">上过课</van-checkbox>
                 </div>
               </div>
             </div>
@@ -134,7 +137,12 @@
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
             <div class="zmb_time_btns">
+=======
+            <div style="height:1.6rem"></div>
+          <div class="zmb_time_btns">
+>>>>>>> 467b20a320661c6e5da88661a2d79d8b250afd70
           <div class="zmb_time_btns_reset">重置</div>
           <div class="zmb_time_btns_submit">确定</div>
         </div>
@@ -147,8 +155,8 @@
 export default {
   data() {
     return {
-       checked: true,
-      checkedr: true,
+       checked: false,
+      checkedr: false,
       minDate: new Date(2020, 9, 20),
       maxDate: new Date(2020, 9, 31),
       teacherList: [
@@ -389,19 +397,5 @@ body {
   text-align: center;
   margin-right: 0.7rem;
   margin-bottom: 0.8rem;
-}
-.lzh-butbox {
-  width: 100%;
-  height: 3rem;
-  display: inline-flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 9;
-  position: fixed;
-  bottom: 0;
-}
-.lzh-butbox button {
-  width: 6rem;
-  height: 1.3rem;
 }
 </style>
