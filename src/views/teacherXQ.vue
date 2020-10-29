@@ -2,7 +2,7 @@
   <div>
     <!-- 讲师详情页面======================================================================= -->
     <div class="zmb_bgd">
-      <div class="zmb_back">&lt;</div>
+      <div class="zmb_back" @click="back">&lt;</div>
       <div class="zmb_title">讲师详情</div>
     </div>
     <div class="zmb_card">
@@ -42,6 +42,9 @@ export default {
         query: { item: this.card },
       });
     },
+    back(){
+        this.$router.go(-1);
+    }
   },
   computed: {
     card() {

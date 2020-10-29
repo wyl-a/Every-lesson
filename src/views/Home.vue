@@ -82,6 +82,7 @@
           class="wpf_FT_item_img"
           v-for="(item, index) in islist"
           :key="index"
+          @click="teacherXQ(item)"
         >
           <van-image
             round
