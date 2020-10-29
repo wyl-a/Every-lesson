@@ -41,6 +41,6 @@ export default {
 
 <style>
 .van-nav-bar{
-  background: #e6e6e6!important;
+  /* background: #e6e6e6!important; */
 }
 </style>
