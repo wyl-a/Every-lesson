@@ -19,10 +19,22 @@ const routes = [{
     name: 'Course',
     component: () => import('../views/course/Course.vue'),
     meta: {
-      title: "课程",
+      title: "特色课",
       isShow: true,
       isShowleft: false,
       isTab: true,
+      email: true,
+    }
+  },
+  {
+    path: '/courseitem',
+    name: 'Courseitem',
+    component: () => import('../views/course/courseitem.vue'),
+    meta: {
+      title: "课程详情",
+      isShow: true,
+      isShowleft: true,
+      isTab: false,
       email: true,
     }
   },
@@ -340,6 +352,31 @@ const routes = [{
       isTab: true,
       email: true,
     }
+  },
+  //老师详情路由
+  {
+    path: '/teacherXQ',
+    name: 'teacherXQ',
+    component: () => import('../views/teacherXQ.vue'),
+    meta: {
+      email: true,
+    },
+    children: [{
+        path: 'introduce',
+        name: 'introduce',
+        component: () => import('../views/teacherLX-second level/introduce.vue'),
+      },
+      {
+        path: 'course',
+        name: 'course',
+        component: () => import('../views/teacherLX-second level/course.vue'),
+      },
+      {
+        path: 'trainee',
+        name: 'trainee',
+        component: () => import('../views/teacherLX-second level/trainee.vue'),
+      }
+    ]
   },
 ]
 

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- 课程文件 -->
     <van-row>
       <van-col span="8">
         <van-dropdown-menu>
@@ -74,19 +75,35 @@
     </van-row>
     <div class="lzh-title-box">
       <div class="lzh-container" v-for="(item, index) in list" :key="index">
-        <div class="lzh-teseke">
-          <p style="margin-left:0.4rem">{{ item.title }}</p>
-          <van-image
-            round
-            width="1rem"
-            height="1rem"
-            :src="item.cover_img"
-          />
-          <div></div>
+        <div class="lzh-teseke" @click="courseitem(item)">
+          <div style="margin-left: 0.4rem">{{ item.title }}</div>
+          <div style="margin-left: 0.4rem">共8课时</div>
+          <div class="lzh-titlebox">
+            <div class="lzh-titleleft">
+              <van-image
+                round
+                width="1.5rem"
+                height="1.5rem"
+                :src="item.cover_img"
+              />李青
+            </div>
+            <div class="lzh-titleright">
+              <img src="/baoming.png" alt="" />
+            </div>
+          </div>
+
+          <div class="lzh-titlebox" style="border-bottom: 0">
+            <div class="lzh-titleleft">
+              <div>132人报名</div>
+            </div>
+            <div class="lzh-titleright">
+              <div style="color: aquamarine">免费</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="box"></div>
+    <div style="height:3rem"></div>
   </div>
 </template>
 
@@ -107,11 +124,19 @@ export default {
   },
   mounted() {
     this.$APP.course().then((res) => {
-      console.log(res.data.data.list);
+      console.log(res.data);
       this.list = res.data.data.list;
     });
   },
   methods: {
+    courseitem(item) {
+      this.$router.push({
+        path: "/courseitem",
+        query: {
+          item,
+        },
+      });
+    },
   },
 };
 </script>
@@ -175,13 +200,26 @@ export default {
 .lzh-teseke {
   width: 100%;
   height: 100%;
+  font-size: 0.7rem;
+}
+.lzh-titlebox {
+  width: 90%;
   display: inline-flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid rgb(177, 175, 175);
+  margin-left: 0.7rem;
+}
+.lzh-titleleft {
+  width: 25%;
+  display: inline-flex;
+  justify-content: space-around;
   align-items: center;
 }
-.box{
-  width: 100%;
-  height: 2.6rem;
+.lzh-tilteright {
+  width: 75%;
+}
+.lzh-titleright img {
+  width: 3rem;
 }
 </style>
