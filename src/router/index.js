@@ -381,6 +381,19 @@ const routes = [{
       email: true,
     }
   },
+  //编辑个人信息路由
+  {
+    path: '/edit',
+    name: 'edit',
+    component: () => import('../views/User/edit.vue'),
+    meta: {
+      title: "个人信息",
+      isShow: true,
+      isShowleft: true,
+      isTab: false,
+      email: true,
+    }
+  }
 ]
 
 const router = new VueRouter({

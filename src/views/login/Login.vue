@@ -5,7 +5,7 @@
       <img src="../../assets/Login/login.png" alt="" />
     </div>
     <div>
-      <van-form>
+      <van-form @submit="onSubmit">
         <van-field
           v-model="username"
           name="用户名"
@@ -42,6 +42,9 @@ export default {
     };
   },
   methods: {
+    onSubmit(values) {
+      console.log("submit", values);
+    },
     retrieve() {
       this.$router.push("/retrieve");
     },

@@ -1,18 +1,13 @@
 <template>
   <div>
-    <div
-      class="lecturerItem"
-      v-for="(item, index) in lecturer"
-      :key="index"
-      @click="teacherDetails(item)"
-    >
+    <div class="lecturerItem" v-for="(item, index) in lecturer" :key="index">
       <div class="lecturerItem_box">
         <div class="lecturerItem_box_left">
           <img :src="item.img" alt="" />
         </div>
         <div class="lecturerItem_box_right">
-          <p>{{ item.name }}</p>
-          <div class="van-ellipsis">{{ item.title }}</div>
+            <p>{{item.name}}</p>
+            <div class="van-ellipsis">{{item.title}}</div>
         </div>
       </div>
     </div>
@@ -24,14 +19,6 @@ export default {
   props: {
     lecturer: {
       type: Array,
-    },
-  },
-  methods: {
-    teacherDetails(item) {
-      this.$router.push({
-        path: "/teacherXQ/introduce",
-        query: { item: item },
-      });
     },
   },
 };
@@ -66,16 +53,16 @@ export default {
   height: 2rem;
   border-radius: 50%;
 }
-.lecturerItem_box_right {
-  width: 80%;
+.lecturerItem_box_right{
+    width: 80%;
 }
-.lecturerItem_box_right p {
-  font-size: 0.7rem;
-  color: gray;
+.lecturerItem_box_right p{
+    font-size: 0.7rem;
+    color: gray;
 }
-.lecturerItem_box_right div {
-  margin-top: 0.2rem;
-  font-size: 0.55rem;
-  color: gray;
+.lecturerItem_box_right div{
+    margin-top: 0.2rem;
+    font-size: 0.55rem;
+    color: gray;
 }
 </style>

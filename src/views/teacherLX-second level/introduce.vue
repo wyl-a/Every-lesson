@@ -10,7 +10,7 @@
       </div>
       <div class="zmb_teacher_profile">
           <span>老师简介</span>
-          {{card.title}}
+          {{card.introduction}}
       </div>
   </div>
 </template>

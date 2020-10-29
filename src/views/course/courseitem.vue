@@ -68,7 +68,7 @@
         </div>
       </div>
     </div>
-    <div style="height:3rem"></div>
+    <div style="height:2rem"></div>
     <div class="lzh-lijiboaming">
       <van-button type="warning">立即报名</van-button>
     </div>
