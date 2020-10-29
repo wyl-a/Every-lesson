@@ -20,6 +20,9 @@ const APP = {
     smsCode(params) {
         return request(apl.METHODS.POST, apl.URL.SmsCode,params);
     },
+    change(params) {
+        return request(apl.METHODS.POST, apl.URL.Change,params);
+    },
 }
 
 export default APP

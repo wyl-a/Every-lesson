@@ -17,6 +17,7 @@ Vue.prototype.$APP = APP;
 
 //rem
 import './config/rem.js';
+
 //解决全局路由导航切换
 import Router from 'vue-router'
 const routerPush = Router.prototype.push

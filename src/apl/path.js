@@ -12,7 +12,9 @@ const apl = {
         //登录
         Login: "/api/app/login",
         //验证码登录
-        SmsCode:"/api/app/smsCode"
+        SmsCode:"/api/app/smsCode",
+        //修改密码
+        Change:"/api/app/password"
     }
 }
 export default apl

@@ -9,7 +9,9 @@
           placeholder="请输入短信验证码"
         >
           <template #button>
-            <van-button size="small" type="primary">发送验证码</van-button>
+            <van-button size="small" type="primary" @click="onClickSend"
+              >发送验证码</van-button
+            >
           </template>
         </van-field>
         <van-cell-group>
@@ -20,7 +22,7 @@
         </van-cell-group>
       </div>
       <div class="wyl_login_button">
-        <button>登录</button>
+        <button @click="onClickRegister">登录</button>
       </div>
     </div>
   </div>
@@ -35,7 +37,33 @@ export default {
       password: "",
     };
   },
-  methods: {},
+  methods: {
+    onClickSend() {
+      this.$APP
+        .smsCode({
+          mobile: this.sms,
+          sms_type: "getPassword",
+        })
+        .then((res) => {
+          console.log(res);
+        });
+    },
+    onClickRegister() {
+      this.$APP
+        .change({
+          mobile: this.sms,
+          password: this.password,
+          sms_code: this.sss,
+        })
+        .then((res) => {
+          console.log(res);
+          console.log(res.data.data.remember_token);
+          let token = res.data.data.remember_token;
+          window.localStorage.setItem("token", token);
+          this.$router.push("/user");
+        });
+    },
+  },
 };
 </script>
 
