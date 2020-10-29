@@ -3,6 +3,7 @@
     <div
       class="recommended"
       v-for="(item,index) in recommended" :key="index"
+      @click="courseitem(item)"
     >
       <div class="recommended_box">
         <div class="recommended_box_top">
@@ -38,6 +39,16 @@ export default {
       type: Array,
     },
   },
+  methods:{
+     courseitem(item) {
+      this.$router.push({
+        path: "/courseitem",
+        query: {
+          item,
+        },
+      });
+    },
+  }
 };
 </script>
 

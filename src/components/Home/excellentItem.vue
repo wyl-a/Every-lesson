@@ -4,6 +4,7 @@
       class="excellent_course"
       v-for="(item, index) in excellent_course"
       :key="index"
+   @click="courseitem(item)" 
     >
       <div class="excellent_course_box">
         <div class="excellent_course_box_top">
@@ -15,7 +16,7 @@
         </div>
         <div class="excellent_course_box_bottom">
           <div class="excellent_course_box_bottom_img">
-            <img :src="item.img" alt="" />
+            <img :src="item.cover_img" alt="" />
           </div>
           <div class="excellent_course_box_bottom_title">
             <div>{{ item.name }}</div>
@@ -39,6 +40,16 @@ export default {
       type: Array,
     },
   },
+  methods:{
+     courseitem(item) {
+      this.$router.push({
+        path: "/courseitem",
+        query: {
+          item,
+        },
+      });
+    },
+  }
 };
 </script>
 

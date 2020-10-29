@@ -134,7 +134,7 @@ export default {
       this.listtitle3 = res.data.data[3].channel_info.name;
       this.listtitle4 = res.data.data[0].channel_info.name;
     });
-    this.$axios.get("http://127.0.0.1:8080/home.json").then((res) => {
+    this.$axios.get("/home.json").then((res) => {
       console.log(res);
       this.famous = res.data.famous; //名师阵容
       this.excellent_course = res.data.excellent_course; //精选课程
