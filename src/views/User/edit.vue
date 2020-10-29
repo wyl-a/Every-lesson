@@ -8,13 +8,13 @@
       <!-- 昵称 -->
       <van-cell is-link title="昵称">{{ name }}</van-cell>
       <!-- 手机号 -->
-      <van-cell is-link :closeable="false" title="手机号">{{ phone }}</van-cell>
+      <van-cell :closeable="false" title="手机号">{{ phone }}</van-cell>
       <!-- 性别 -->
       <van-cell is-link title="性别">{{ sex }}</van-cell>
       <!-- 出生日期 -->
-<van-cell is-link title="出生日期">2002-01-14</van-cell>
-<van-cell is-link title="所在城市">北京</van-cell>
-<van-cell is-link title="学科">全栈</van-cell>
+      <van-cell is-link title="出生日期">2002-01-14</van-cell>
+      <van-cell is-link title="所在城市">北京</van-cell>
+      <van-cell is-link title="学科">全栈</van-cell>
       <!-- 头像的动作面板 -->
       <van-action-sheet
         v-model="show"
@@ -33,7 +33,7 @@ import { Toast } from "vant";
 export default {
   data() {
     return {
-      name: "小绵羊",
+      name: "杨狗蛋",
       phone: "15810195203",
       show: false,
       sex: "男",
