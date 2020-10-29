@@ -40,6 +40,7 @@
           class="wpf_FT_item_img"
           v-for="(item, index) in lists"
           :key="index"
+          @click="teacherXQ(item)"
         >
           <van-image
             round
@@ -81,6 +82,7 @@
           class="wpf_FT_item_img"
           v-for="(item, index) in islist"
           :key="index"
+          @click="teacherXQ(item)"
         >
           <van-image
             round
@@ -108,7 +110,6 @@ Vue.use(Lazyload);
 export default {
   components: {
     FTtitle,
-    
   },
   data() {
     return {
@@ -119,14 +120,14 @@ export default {
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019LnKumseuhw1569839569.jpg",
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20193KAjU2cB6h1569839562.jpg",
       ],
+
       //分类标题
-      listtitle1:'',
-      listtitle2:'',
-      listtitle3:'',
+      listtitle1: "",
+      listtitle2: "",
+      listtitle3: "",
       lists: [],
       showlist: [],
       islist: [],
-    
     };
   },
   mounted() {},
@@ -137,16 +138,23 @@ export default {
     routeCourse() {
       this.$router.push("/course");
     },
-    lzhrili(){
-       this.$router.push('/rili')
-    }
+    lzhrili() {
+      this.$router.push("/rili");
+    },
+    //点击老师跳转详情
+    teacherXQ(item) {
+      this.$router.push({
+        path: "/teacherXQ/introduce",
+        query: { item: item },
+      });
+    },
   },
   mounted() {
     //获取首页列表数据
     this.$APP.getteacher().then((res) => {
-      this.listtitle1=res.data.data[0].channel_info.name;
-      this.listtitle2=res.data.data[1].channel_info.name;
-      this.listtitle3=res.data.data[4].channel_info.name;
+      this.listtitle1 = res.data.data[0].channel_info.name;
+      this.listtitle2 = res.data.data[1].channel_info.name;
+      this.listtitle3 = res.data.data[4].channel_info.name;
       console.log(res.data.data);
       this.lists = res.data.data[0].list;
       this.showlist = res.data.data[1].list;
@@ -226,7 +234,6 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-
 }
 
 .zmb_FT_item div {
@@ -235,7 +242,6 @@ body {
   background: #fff;
   border-radius: 10px;
   margin: 0.3rem;
-
 }
 .wpf_FT_item_img {
   width: 100%;
@@ -243,7 +249,6 @@ body {
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
-
 }
 .wpf_FT_name {
   font-size: 12px;
