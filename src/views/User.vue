@@ -12,7 +12,7 @@
             <div class="wyl_user_personage_box_top_title">
               <div class="wyl_user_personage_box_top_name">
                 <div>杨狗蛋</div>
-                <van-icon name="edit" />
+                <van-icon name="edit" @click="edit" />
               </div>
               <div class="wyl_user_personage_box_top_button" @click="onevsone">
                 去约课
@@ -199,6 +199,10 @@ export default {
     onevsone() {
       this.$router.push("/onevsone");
     },
+    //编辑个人信息
+    edit(){
+      this.$router.push('/edit');
+    }
   },
 };
 </script>
