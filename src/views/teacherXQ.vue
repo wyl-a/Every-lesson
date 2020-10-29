@@ -6,9 +6,9 @@
       <div class="zmb_title">讲师详情</div>
     </div>
     <div class="zmb_card">
-      <img :src="card.teacher_avatar" alt="" />
+      <img :src="card.img" alt="" />
       <div class="zmb_txt">
-        <p>{{ card.teacher_name }}</p>
+        <p>{{ card.name }}</p>
         <p>男 30年教龄</p>
       </div>
       <div class="zmb_guanzhu">
