@@ -61,6 +61,7 @@
         class="zmb_FT_item_tuijian"
         v-for="(item, index) in showlist"
         :key="index"
+        @click="onClick"
       >
         <div class="zmb_FT_item_tuijian_wpf">
           <p>{{ item.title }}</p>
@@ -129,7 +130,7 @@ export default {
     
     };
   },
-  mounted() {},
+
   methods: {
     onevsone() {
       this.$router.push("/onevsone");
@@ -137,6 +138,13 @@ export default {
     routeCourse() {
       this.$router.push("/course");
     },
+
+    //精品课程，点击跳详情
+    onClick(){
+      this.$router.push({
+        path:'/courseitem'
+      })
+    }
   },
   mounted() {
     //获取首页列表数据

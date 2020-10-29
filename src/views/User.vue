@@ -30,7 +30,7 @@
               <p style="color: orange; font-size: 1.2rem; font-weight: 600">
                 0
               </p>
-              <p style="font-size: 0.7rem">一对一辅导</p>
+              <p style="font-size: 0.7rem" @click="onClickOne">一对一辅导</p>
               <p style="font-size: 0.4rem; color: gray">我的一对一老师辅导</p>
             </div>
             <div style="border-left: 1px solid #e6e6e6">
@@ -64,7 +64,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods:{
+    onClickOne(){
+      this.$router.push({
+        path:'/appointment'
+      })
+    }
+},
+};
 </script>
 
 <style>
