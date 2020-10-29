@@ -35,74 +35,50 @@
     <!-- 名师阵容 -->
     <section>
       <FTtitle :title="listtitle1"></FTtitle>
-      <div class="zmb_FT_item">
-        <div
-          class="wpf_FT_item_img"
-          v-for="(item, index) in lists"
-          :key="index"
-          @click="teacherXQ(item)"
-        >
-          <van-image
-            round
-            width="2.5rem"
-            height="2rem"
-            :src="item.teacher_avatar"
-          />
-          <div class="wpf_FT_item_title">
-            <p class="wpf_FT_name">{{ item.teacher_name }}</p>
-            <p class="wpf_FT_text">{{ item.introduction }}</p>
-          </div>
-        </div>
-      </div>
+      <FamousBox>
+        <FamousItem :famous="famous"></FamousItem>
+      </FamousBox>
     </section>
-    <!-- 推荐课程 -->
+
+    <!-- 精选课程 -->
     <section>
       <FTtitle :title="listtitle2"></FTtitle>
-      <div
-        class="zmb_FT_item_tuijian"
-        v-for="(item, index) in showlist"
-        :key="index"
-      >
-        <div class="zmb_FT_item_tuijian_wpf">
-          <p>{{ item.title }}</p>
-          <p class="zmb_FT_item_tuijian_wpf_p">共{{ item.sales_base }}课时</p>
-          <van-image round width="1rem" height="1rem" :src="item.cover_img" />
-        </div>
-        <div class="zmb_FT_item_tuijian_wpff">
-          <div>{{ item.sales_num }}人已报名</div>
-          <div>￥{{ item.price }}</div>
-        </div>
-      </div>
+      <ExcellentBox>
+        <ExcellentItem :excellent_course="excellent_course"></ExcellentItem>
+      </ExcellentBox>
     </section>
-    <!-- 明星讲师 -->
+
+    <!-- 推荐课程 -->
     <section>
       <FTtitle :title="listtitle3"></FTtitle>
-      <div class="zmb_FT_item">
-        <div
-          class="wpf_FT_item_img"
-          v-for="(item, index) in islist"
-          :key="index"
-          @click="teacherXQ(item)"
-        >
-          <van-image
-            round
-            width="2.5rem"
-            height="2rem"
-            :src="item.teacher_avatar"
-          />
-          <div class="wpf_FT_item_title">
-            <p class="wpf_FT_name">{{ item.teacher_name }}</p>
-            <p class="wpf_FT_text">{{ item.introduction }}</p>
-          </div>
-        </div>
-      </div>
+      <RecommendBox>
+        <RecommendItem :recommended="recommended"></RecommendItem>
+      </RecommendBox>
     </section>
-    <div class="wpf_footer_container"></div>
+
+    <!-- 明星讲师 -->
+    <section>
+      <FTtitle :title="listtitle4"></FTtitle>
+      <IecturerBox>
+        <IecturerItem :lecturer="lecturer"></IecturerItem>
+      </IecturerBox>
+    </section>
+
+    <div class="box"></div>
   </div>
 </template>
 
 <script>
 import FTtitle from "../components/FTtitle/FT_title";
+import FamousBox from "../components/Home/famousBox";
+import FamousItem from "../components/Home/famousItem";
+import ExcellentBox from "../components/Home/excellentBox";
+import ExcellentItem from "../components/Home/excellentItem";
+import RecommendBox from "../components/Home/recommendBox";
+import RecommendItem from "../components/Home/recommendItem";
+import IecturerBox from "../components/Home/IecturerBox";
+import IecturerItem from "../components/Home/lecturerItem";
+
 import Vue from "vue";
 import { Lazyload } from "vant";
 
@@ -110,6 +86,14 @@ Vue.use(Lazyload);
 export default {
   components: {
     FTtitle,
+    FamousBox,
+    FamousItem,
+    ExcellentBox,
+    ExcellentItem,
+    RecommendBox,
+    RecommendItem,
+    IecturerBox,
+    IecturerItem,
   },
   data() {
     return {
@@ -120,14 +104,14 @@ export default {
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019LnKumseuhw1569839569.jpg",
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20193KAjU2cB6h1569839562.jpg",
       ],
-
-      //分类标题
       listtitle1: "",
       listtitle2: "",
       listtitle3: "",
-      lists: [],
-      showlist: [],
-      islist: [],
+      listtitle4: "",
+      famous: [], //名师阵容
+      excellent_course: [], //精选课程
+      recommended: [], //推荐课程
+      lecturer: [], //明星讲师
     };
   },
   mounted() {},
@@ -141,24 +125,21 @@ export default {
     lzhrili() {
       this.$router.push("/rili");
     },
-    //点击老师跳转详情
-    teacherXQ(item) {
-      this.$router.push({
-        path: "/teacherXQ/introduce",
-        query: { item: item },
-      });
-    },
   },
   mounted() {
     //获取首页列表数据
     this.$APP.getteacher().then((res) => {
-      this.listtitle1 = res.data.data[0].channel_info.name;
+      this.listtitle1 = res.data.data[4].channel_info.name;
       this.listtitle2 = res.data.data[1].channel_info.name;
-      this.listtitle3 = res.data.data[4].channel_info.name;
-      console.log(res.data.data);
-      this.lists = res.data.data[0].list;
-      this.showlist = res.data.data[1].list;
-      this.islist = res.data.data[4].list;
+      this.listtitle3 = res.data.data[3].channel_info.name;
+      this.listtitle4 = res.data.data[0].channel_info.name;
+    });
+    this.$axios.get("http://127.0.0.1:8080/home.json").then((res) => {
+      console.log(res);
+      this.famous = res.data.famous; //名师阵容
+      this.excellent_course = res.data.excellent_course; //精选课程
+      this.recommended = res.data.recommended; //推荐课程
+      this.lecturer = res.data.lecturer; //明星讲师
     });
   },
 };
@@ -227,74 +208,7 @@ body {
 .zmb_index_kinds div p {
   width: 100%;
 }
-
-.zmb_FT_item {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
-
-.zmb_FT_item div {
-  width: 95%;
-  height: 3rem;
-  background: #fff;
-  border-radius: 10px;
-  margin: 0.3rem;
-}
-.wpf_FT_item_img {
-  width: 100%;
-  height: 100%;
-  display: inline-flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.wpf_FT_name {
-  font-size: 12px;
-  margin-top: 8px;
-}
-.wpf_FT_text {
-  font-size: 10px;
-  margin-top: 5px;
-}
-.wpf_FT_item_title {
-  width: 100%;
-  height: 100%;
-  display: inline-flex;
-  flex-flow: column;
-}
-.zmb_FT_item_tuijian {
-  width: 95%;
-  height: 6rem;
-  background-color: #fff;
-  /*display: inline-flex;*/
-  /*justify-content: center;*/
-  /*align-items: center;*/
-  border-radius: 0.5rem;
-  /*margin-left: 8px;*/
-  margin: 0.5rem 8px;
-  font-size: 14px;
-}
-.zmb_FT_item_tuijian_wpf {
-  width: 100%;
-  height: 4rem;
-  margin: 5px 5px;
-  border-bottom: 1px solid #eee;
-}
-.zmb_FT_item_tuijian_wpff {
-  width: 100%;
-  height: 2rem;
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 10px;
-}
-.zmb_FT_item_tuijian_wpf_p {
-  font-size: 10px;
-  margin: 10px 0;
-}
-.wpf_footer_container {
+.box {
   width: 100%;
   height: 3rem;
 }
