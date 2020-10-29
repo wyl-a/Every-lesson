@@ -19,10 +19,7 @@ export default {
 }
 </script>
 
-<style>
-body{
-  background: lightgray;
-}
+<style scoped>
 .updataPass{
   width: 100%;
   height: 2rem;
