@@ -16,21 +16,21 @@
         }
     ],
     "excellent_course": [{
-            "img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png",
+            "cover_img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png",
             "name": "杨德胜",
             "title": "每时每课特级教师-自主招生冲刺讲座6-多元方程与可转发为多元方程组问题",
             "icon": "http://127.0.0.1:8080/yibaoming.png",
             "apply": "150",
             "price": "免费"
         }, {
-            "img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png",
+            "cover_img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png",
             "name": "杨德胜",
             "title": "每时每课特级教师-自主招生冲刺讲座8-二次函数2--根的分布",
             "icon": "http://127.0.0.1:8080/yibaoming.png",
             "apply": "110",
             "price": "免费"
         }, {
-            "img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png",
+            "cover_img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png",
             "name": "杨德胜",
             "title": "每时每课特级教师-自主招生冲刺讲座-1代数式求值1",
             "icon": "http://127.0.0.1:8080/yibaoming.png",
@@ -38,7 +38,7 @@
             "price": "免费"
         },
         {
-            "img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20192TSKKmyNso1572684453.png",
+            "cover_img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20192TSKKmyNso1572684453.png",
             "name": "马学斌",
             "title": "初中重点几何知识点——第三讲：平行四边形与矩形、菱形、正方形的关系",
             "icon": "http://127.0.0.1:8080/yibaoming.png",
@@ -46,7 +46,7 @@
             "price": "1.00"
         },
         {
-            "img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20192TSKKmyNso1572684453.png",
+            "cover_img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20192TSKKmyNso1572684453.png",
             "name": "马学斌",
             "title": "初中重点几何知识点——第九讲： 用描点法画出二次函数y＝－x^2的图象",
             "icon": "http://127.0.0.1:8080/yibaoming.png",
@@ -54,7 +54,7 @@
             "price": "1.00"
         },
         {
-            "img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20192TSKKmyNso1572684453.png",
+            "cover_img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20192TSKKmyNso1572684453.png",
             "name": "马学斌",
             "title": "初中重点几何知识点——第二讲：三角形对平行四边形的影响",
             "icon": "http://127.0.0.1:8080/yibaoming.png",
@@ -62,7 +62,7 @@
             "price": "1.00"
         },
         {
-            "img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20192TSKKmyNso1572684453.png",
+            "cover_img": "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20192TSKKmyNso1572684453.png",
             "name": "马学斌",
             "title": "初中重点几何知识点——第八讲： 用描点法画二次函数y＝x^2的图象",
             "icon": "http://127.0.0.1:8080/yibaoming.png",
@@ -71,7 +71,7 @@
         }
     ],
     "recommended": [{
-            "img": "https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg",
+            "cover_img": "https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg",
             "name": "白静",
             "title": "初中重点几何知识点——第八讲： 用描点法画二次函数y＝x^2的图象",
             "icon": "http://127.0.0.1:8080/yibaoming.png",
@@ -79,7 +79,7 @@
             "price": "1.00"
         },
         {
-            "img": "https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg",
+            "cover_img": "https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg",
             "name": "白静",
             "title": "初中重点几何知识点——第八讲： 用描点法画二次函数y＝x^2的图象",
             "icon": "http://127.0.0.1:8080/yibaoming.png",
@@ -87,7 +87,7 @@
             "price": "1.00"
         },
         {
-            "img": "https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg",
+            "cover_img": "https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg",
             "name": "白静",
             "title": "初中重点几何知识点——第八讲： 用描点法画二次函数y＝x^2的图象",
             "icon": "http://127.0.0.1:8080/yibaoming.png",
@@ -95,7 +95,7 @@
             "price": "1.00"
         },
         {
-            "img": "https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg",
+            "cover_img": "https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg",
             "name": "白静",
             "title": "初中重点几何知识点——第八讲： 用描点法画二次函数y＝x^2的图象",
             "icon": "http://127.0.0.1:8080/yibaoming.png",
@@ -103,7 +103,7 @@
             "price": "1.00"
         },
         {
-            "img": "https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg",
+            "cover_img": "https://baijiayun-wangxiao.oss-cn-beijing.aliyuncs.com/uploads/avatar.jpg",
             "name": "白静",
             "title": "初中重点几何知识点——第八讲： 用描点法画二次函数y＝x^2的图象",
             "icon": "http://127.0.0.1:8080/yibaoming.png",
