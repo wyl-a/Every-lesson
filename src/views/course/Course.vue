@@ -37,7 +37,6 @@
               <van-button
                 type="danger"
                 style="background: #eb6100; color: #fff"
-                @click="onConfirm"
               >
                 确认
               </van-button>
@@ -87,6 +86,7 @@
         </div>
       </div>
     </div>
+    <div class="box"></div>
   </div>
 </template>
 
@@ -112,9 +112,6 @@ export default {
     });
   },
   methods: {
-    onConfirm() {
-      this.$refs.item.toggle();
-    },
   },
 };
 </script>
@@ -183,5 +180,8 @@ export default {
   flex-wrap: wrap;
   align-items: center;
 }
-
+.box{
+  width: 100%;
+  height: 2.6rem;
+}
 </style>

@@ -40,4 +40,7 @@ export default {
 </script>
 
 <style>
+.van-nav-bar{
+  background: #e6e6e6!important;
+}
 </style>
