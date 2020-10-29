@@ -341,6 +341,31 @@ const routes = [{
       email: true,
     }
   },
+  //老师详情路由
+  {
+    path: '/teacherXQ',
+    name: 'teacherXQ',
+    component: () => import('../views/teacherXQ.vue'),
+    meta: {
+      email: true,
+    },
+    children: [{
+        path: 'introduce',
+        name: 'introduce',
+        component: () => import('../views/teacherLX-second level/introduce.vue'),
+      },
+      {
+        path: 'course',
+        name: 'course',
+        component: () => import('../views/teacherLX-second level/course.vue'),
+      },
+      {
+        path: 'trainee',
+        name: 'trainee',
+        component: () => import('../views/teacherLX-second level/trainee.vue'),
+      }
+    ]
+  },
 ]
 
 const router = new VueRouter({
