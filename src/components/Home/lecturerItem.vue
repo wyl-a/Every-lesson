@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="lecturerItem" v-for="(item, index) in lecturer" :key="index">
+    <div class="lecturerItem" v-for="(item, index) in lecturer" :key="index" @click="onLecturer(item)">
       <div class="lecturerItem_box">
         <div class="lecturerItem_box_left">
           <img :src="item.img" alt="" />
@@ -21,6 +21,14 @@ export default {
       type: Array,
     },
   },
+  methods:{
+    onLecturer(item){
+      this.$router.push({
+        path: "/teacherXQ/introduce",
+        query: { item: item },
+      });
+    }
+  }
 };
 </script>
 
