@@ -7,7 +7,7 @@
     <div class="wyl_register">
       <van-field v-model="sms" center clearable placeholder="请输入短信验证码">
         <template #button>
-          <van-button size="small" type="primary">发送验证码</van-button>
+          <van-button size="small" type="primary" @click="onClickSend">发送验证码</van-button>
         </template>
       </van-field>
       <van-cell-group>
@@ -36,16 +36,31 @@ export default {
     onLogin() {
       this.$router.push("/login");
     },
-    redister(){
-      this.$APP.login({
-        mobile:this.sms,
-        sms_code:this.sss,
-        client:1,
-        type:2
-      }).then(res=>{
-        console.log(res);
-      })
-    }
+    onClickSend() {
+      this.$APP
+        .smsCode({
+          mobile: this.sms,
+          sms_type: "login",
+        })
+        .then((res) => {
+          console.log(res);
+        });
+    },
+    redister() {
+      this.$APP
+        .login({
+          mobile: this.sms,
+          sms_code: this.sss,
+          client: 1,
+          type: 2,
+        })
+        .then((res) => {
+          console.log(res);
+          let token = res.data.data.remember_token;
+          window.localStorage.setItem("token", token);
+          this.$router.push("/edit");
+        });
+    },
   },
 };
 </script>

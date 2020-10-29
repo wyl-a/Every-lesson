@@ -61,10 +61,14 @@ export default {
         })
         .then((res) => {
           console.log(res);
-          console.log(res.data.data.remember_token);
-          let token =res.data.data.remember_token
-          window.localStorage.setItem("token",token)
-          this.$router.push('/user')
+          let token = res.data.data.remember_token;
+          window.localStorage.setItem("token", token);
+          console.log(res.data.data.is_new);
+          if (res.data.data.is_new < 1) {
+            this.$router.push("/edit");
+          } else {
+            this.$router.push("/user");
+          }
         });
     },
   },
