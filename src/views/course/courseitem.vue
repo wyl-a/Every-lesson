@@ -43,12 +43,32 @@
         <p>李青 2020.03.16 18:30-19:30</p>
       </div>
     </div>
-    <hr class="lzh-spx" style="margin-top:1rem"/>
-    <div class="lzh-pinglu">课程评论
-          <div class="lzh-pinglhezi" v-for="i in 5" :key="i">
-                
+    <hr class="lzh-spx" style="margin-top: 1rem" />
+    <div class="lzh-pinglu">
+      课程评论
+      <div class="lzh-pinglhezi" v-for="i in 5" :key="i">
+        <div class="lzh-pinglhezi-left">
+          <van-image
+            round
+            width="1.5rem"
+            height="1.5rem"
+            :src="courseitem.cover_img"
+          />
+        </div>
+        <div class="lzh-pinglhezi-right">
+          <div>
+               13545688745 
+               <img src="/xzxingxing.png" alt="">
+               <img src="/xzxingxing.png" alt="">
+               <img src="/xzxingxing.png" alt="">
+               <img src="/xzxingxing.png" alt="">
+               2020.03.25 16:45
           </div>
+          <div>dskhafdifh</div>
+        </div>
+      </div>
     </div>
+    <div style="height:2rem"></div>
     <div class="lzh-lijiboaming">
       <van-button type="warning">立即报名</van-button>
     </div>
@@ -139,12 +159,24 @@ export default {
   left: 0;
   right: 0;
 }
-.lzh-pinglu{
-    padding-left: 1rem;
-  padding-top: 0.5rem; 
+.lzh-pinglu {
+  padding-left: 1rem;
+  padding-top: 0.5rem;
 }
-.lzh-pinglhezi{
-    width: 100%;
-    height: 3rem;
+.lzh-pinglhezi {
+  width: 100%;
+  height: 3rem;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lzh-pinglhezi-left{
+ width: 15%;
+}
+.lzh-pinglhezi-right img{
+    width: 0.5rem;
+}
+.lzh-pinglhezi-right{
+  width: 85%;
 }
 </style>
