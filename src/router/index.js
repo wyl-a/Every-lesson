@@ -84,6 +84,7 @@ const routes = [{
       isShow: true,
       isShowleft: true,
       isTab: false,
+      isShowright:true,
     }
   },
   {
@@ -385,17 +386,17 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 })
-router.beforeEach((to, from, next) => {
-  let token = localStorage.getItem('token')
-  if (to.name == "Login") {
-    next()
-  } else {
-    if (token) {
-      next()
-    } else {
-      next('/login')
-    }
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   let token = localStorage.getItem('token')
+//   if (to.name == "Login") {
+//     next()
+//   } else {
+//     if (token) {
+//       next()
+//     } else {
+//       next('/login')
+//     }
+//   }
+// })
 
 export default router

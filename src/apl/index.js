@@ -17,6 +17,9 @@ const APP = {
     login(params) {
         return request(apl.METHODS.POST, apl.URL.Login,params);
     },
+    register(params) {
+        return request(apl.METHODS.POST, apl.URL.Register,params);
+    },
 }
 
 export default APP

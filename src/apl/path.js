@@ -11,6 +11,8 @@ const apl = {
         course: '/api/app/teacher/mainCourse',
         //登录
         Login: "/api/app/login",
+        //验证码
+        Register:"/api/app/smsCode",
     }
 }
 export default apl

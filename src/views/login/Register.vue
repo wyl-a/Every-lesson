@@ -1,5 +1,5 @@
 <template>
-<!-- 手机验证登录 -->
+  <!-- 手机验证登录 -->
   <div>
     <div class="wyl_login_img">
       <img src="../../assets/Login/login.png" alt="" />
@@ -19,7 +19,7 @@
       <span @click="onLogin">使用密码登录</span>
     </div>
     <div class="wyl_login_button">
-      <button>登录</button>
+      <button @click="redister">登录</button>
     </div>
   </div>
 </template>
@@ -36,6 +36,16 @@ export default {
     onLogin() {
       this.$router.push("/login");
     },
+    redister(){
+      this.$APP.login({
+        mobile:this.sms,
+        sms_code:this.sss,
+        client:1,
+        type:2
+      }).then(res=>{
+        console.log(res);
+      })
+    }
   },
 };
 </script>
