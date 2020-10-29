@@ -17,6 +17,9 @@ const APP = {
     login(params) {
         return request(apl.METHODS.POST, apl.URL.Login,params);
     },
+    smsCode(params) {
+        return request(apl.METHODS.POST, apl.URL.SmsCode,params);
+    },
 }
 
 export default APP
