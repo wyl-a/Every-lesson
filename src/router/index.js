@@ -84,7 +84,7 @@ const routes = [{
       isShow: true,
       isShowleft: true,
       isTab: false,
-      isShowright:true,
+      isShowright: true
     }
   },
   {
@@ -111,9 +111,7 @@ const routes = [{
     path: '/register',
     name: 'register',
     component: () => import('../views/login/Register.vue'),
-    meta: {
-      title: "考点专练",
-    }
+    meta: {}
   },
   {
     path: '/search',
@@ -172,15 +170,6 @@ const routes = [{
       isTab: false,
       email: true,
       isShowright: true //顶部搜索
-    }
-  },
-  {
-    //登录页面路由
-    path: '/login',
-    name: 'login',
-    component: () => import('../views/login/Login.vue'),
-    meta: {
-
     }
   },
   { //错题练习
@@ -347,7 +336,7 @@ const routes = [{
     name: 'Set',
     component: () => import('../views/User/Set.vue'),
     meta: {
-      title: "意见反馈",
+      title: "设置",
       isShow: true,
       isShowleft: true,
       isTab: true,
@@ -379,6 +368,19 @@ const routes = [{
       }
     ]
   },
+  //设置密码
+  {
+    path: '/setpassword',
+    name: 'SetPassword',
+    component: () => import('../views/User/Set/SetPassword.vue'),
+    meta: {
+      title: "设置密码",
+      isShow: true,
+      isShowleft: true,
+      isTab: true,
+      email: true,
+    }
+  },
 ]
 
 const router = new VueRouter({
@@ -386,17 +388,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 })
-// router.beforeEach((to, from, next) => {
-//   let token = localStorage.getItem('token')
-//   if (to.name == "Login") {
-//     next()
-//   } else {
-//     if (token) {
-//       next()
-//     } else {
-//       next('/login')
-//     }
-//   }
-// })
 
 export default router
