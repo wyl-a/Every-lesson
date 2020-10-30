@@ -111,13 +111,13 @@ export default {
     UserBox,
     UserItem,
   },
-  beforeRouteEnter(to, from, next) {
-    let token = localStorage.getItem("token");
-    if (token) {
-      next();
-    } else {
-      next("/login");
-    }
+  beforeRouteEnter (to, from, next) {
+        let token = localStorage.getItem('token')
+        if(token){
+          next()
+        }else{
+          next('/login')
+        }
   },
   data() {
     return {
@@ -208,9 +208,9 @@ export default {
       this.$router.push("/onevsone");
     },
     //编辑个人信息
-    edit() {
-      this.$router.push("/edit");
-    },
+    edit(){
+      this.$router.push('/edit');
+    }
   },
 };
 </script>
