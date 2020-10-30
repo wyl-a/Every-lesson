@@ -2,15 +2,18 @@
   <div>
     <div>
       <div class="wyl_retrieve">
-        <van-field
-          v-model="sms"
-          center
-          clearable
-          placeholder="请输入短信验证码"
-        >
+        <van-field v-model="sms" center clearable placeholder="请输入手机号">
           <template #button>
-            <van-button size="small" type="primary" @click="onClickSend"
-              >发送验证码</van-button
+            <a
+              style="color: red"
+              v-show="isShow == false"
+              size="small"
+              type="primary"
+              @click="onClickSend"
+              >发送验证码</a
+            >
+            <a style="color: gray" v-show="isShow == true"
+              >获取验证码({{ num }})</a
             >
           </template>
         </van-field>
@@ -29,12 +32,18 @@
 </template>
 
 <script>
+import Vue from "vue";
+import { Toast } from "vant";
+
+Vue.use(Toast);
 export default {
   data() {
     return {
       sms: "",
       sss: "",
       password: "",
+      isShow: false,
+      num: 60,
     };
   },
   methods: {
@@ -46,6 +55,12 @@ export default {
         })
         .then((res) => {
           console.log(res);
+          if (res.data.code === 200) {
+            this.countDown();
+            Toast(res.data.msg);
+          } else if (res.data.code == 201) {
+            Toast(res.data.msg);
+          }
         });
     },
     onClickRegister() {
@@ -58,10 +73,21 @@ export default {
         .then((res) => {
           if (res.data.data.is_new < 1) {
             this.$router.push("/edit");
-          }else{
+          } else {
             this.$router.push("/user");
           }
         });
+    },
+    //倒计时
+    countDown() {
+      this.isShow = true;
+      setInterval(() => {
+        this.num--;
+        if (this.num <= 0) {
+          this.isShow = false;
+          this.num = 60;
+        }
+      }, 1000);
     },
   },
 };

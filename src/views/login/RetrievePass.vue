@@ -4,7 +4,7 @@
     <div class="wyl_retrieve">
       <van-field v-model="sms" center clearable placeholder="请输入短信验证码">
         <template #button>
-          <van-button size="small" type="primary">发送验证码</van-button>
+          <a size="small" type="primary">发送验证码</a>
         </template>
       </van-field>
       <van-cell-group>

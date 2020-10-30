@@ -26,9 +26,6 @@ export default {
       type: Array,
     },
   },
-  mounted() {
-    console.log(this.famous);
-  },
   methods: {
     onFamous(item) {
       this.$router.push({
