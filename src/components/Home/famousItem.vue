@@ -4,7 +4,7 @@
       class="wyl_famousItem"
       v-for="(item, index) in famous"
       :key="index"
-      @click="teacherDetails(item)"
+      @click="onFamous(item)"
     >
       <div class="wyl_famousItem_box">
         <div class="wyl_famousItem_box_left">
@@ -26,8 +26,11 @@ export default {
       type: Array,
     },
   },
+  mounted() {
+    console.log(this.famous);
+  },
   methods: {
-    teacherDetails(item) {
+    onFamous(item) {
       this.$router.push({
         path: "/teacherXQ/introduce",
         query: { item: item },

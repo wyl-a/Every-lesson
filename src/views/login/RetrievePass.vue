@@ -2,7 +2,7 @@
 <!-- 注册 -->
   <div>
     <div class="wyl_retrieve">
-      <van-field v-model="sms" center clearable placeholder="请输入短信验证码">
+      <van-field v-model="sms" center clearable placeholder="请输入手机号">
         <template #button>
           <van-button size="small" type="primary">发送验证码</van-button>
         </template>

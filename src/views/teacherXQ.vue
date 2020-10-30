@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- 讲师详情页面======================================================================= -->
+    <!-- 讲师详情页面-->
     <div class="zmb_bgd">
       <div class="zmb_back" @click="back">&lt;</div>
       <div class="zmb_title">讲师详情</div>
@@ -22,7 +22,9 @@
         <van-tab title="学员评价" name="/teacherXQ/trainee"></van-tab>
       </van-tabs>
       <router-view></router-view>
-      <van-button class="zmb_yvyue_btn" type="primary" color="#EB6100" block>立即预约</van-button>
+      <van-button class="zmb_yvyue_btn" type="primary" color="#EB6100" block
+        >立即预约</van-button
+      >
     </div>
   </div>
 </template>
@@ -42,9 +44,9 @@ export default {
         query: { item: this.card },
       });
     },
-    back(){
-        this.$router.go(-1);
-    }
+    back() {
+      this.$router.go(-1);
+    },
   },
   computed: {
     card() {
@@ -111,9 +113,9 @@ body {
   background: white;
   font-size: 0.8rem;
 }
-.zmb_yvyue_btn{
-    position: fixed;
-    bottom: 0;
-    left: 0;
+.zmb_yvyue_btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 </style>

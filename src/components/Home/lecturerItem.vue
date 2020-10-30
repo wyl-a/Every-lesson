@@ -4,7 +4,7 @@
       class="lecturerItem"
       v-for="(item, index) in lecturer"
       :key="index"
-      @click="teacherDetails(item)"
+      @click="blanche(item)"
     >
       <div class="lecturerItem_box">
         <div class="lecturerItem_box_left">
@@ -27,7 +27,9 @@ export default {
     },
   },
   methods: {
-    teacherDetails(item) {
+    blanche(item) {
+      console.log(item);
+      console.log('asdf');
       this.$router.push({
         path: "/teacherXQ/introduce",
         query: { item: item },

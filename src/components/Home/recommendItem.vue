@@ -15,7 +15,7 @@
         </div>
         <div class="recommended_box_bottom">
           <div class="recommended_box_bottom_img">
-            <img :src="item.img" alt="" />
+            <img :src="item.cover_img" alt="" />
           </div>
           <div class="recommended_box_bottom_title">
             <div>{{ item.name }}</div>

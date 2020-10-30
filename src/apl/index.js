@@ -11,11 +11,17 @@ const APP = {
     getteacher() {
         return request(apl.METHODS.GET, apl.URL.GETteacher, {});
     },
-    course(){
-        return request(apl.METHODS.POST,apl.URL.course)
+    course() {
+        return request(apl.METHODS.POST, apl.URL.course)
     },
     login(params) {
-        return request(apl.METHODS.POST, apl.URL.Login,params);
+        return request(apl.METHODS.POST, apl.URL.Login, params);
+    },
+    smsCode(params) {
+        return request(apl.METHODS.POST, apl.URL.SmsCode, params);
+    },
+    change(params) {
+        return request(apl.METHODS.POST, apl.URL.Change, params);
     },
 }
 
