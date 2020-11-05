@@ -4,14 +4,16 @@
       class="excellent_course"
       v-for="(item, index) in excellent_course"
       :key="index"
-   @click="courseitem(item)" 
+      @click="courseitem(item)"
     >
       <div class="excellent_course_box">
         <div class="excellent_course_box_top">
           <div class="excellent_course_box_top_title">{{ item.title }}</div>
           <div class="excellent_course_box_top_titles">
-            <p style="font-size: 0.6rem; color: gray">共1课时</p>
-            <img :src="item.icon" alt="" />
+            <p style="font-size: 0.6rem; color: gray">
+              共{{ item.course_type }}课时
+            </p>
+            <img src="@/assets/baoming.png" alt="" width="25%" />
           </div>
         </div>
         <div class="excellent_course_box_bottom">
@@ -19,14 +21,14 @@
             <img :src="item.cover_img" alt="" />
           </div>
           <div class="excellent_course_box_bottom_title">
-            <div>{{ item.name }}</div>
+            <div>{{ item.teachers_list[0].teacher_name }}</div>
           </div>
         </div>
         <div class="excellent_course_box_registration">
           <div style="font-size: 0.6rem; color: gray">
-            报名人数{{ item.apply }}
+            报名人数{{ item.sales_num }}人
           </div>
-          <div style="font-size: 0.8rem; color: red">{{ item.price }}</div>
+          <div style="font-size: 0.8rem; color: red">免费</div>
         </div>
       </div>
     </div>
@@ -40,15 +42,18 @@ export default {
       type: Array,
     },
   },
-  methods:{
-     courseitem(item) {
+  methods: {
+    courseitem(item) {
       this.$router.push({
         path: "/courseitem",
         query: {
-          item,
+          id:item.id,
         },
       });
     },
+  },
+  mounted(){
+    console.log(this.excellent_course);
   }
 };
 </script>

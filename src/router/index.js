@@ -22,6 +22,7 @@ const routes = [{
       title: "特色课",
       isShow: true,
       isShowleft: false,
+      isShowright:true,
       isTab: true,
       email: true,
     }
@@ -31,10 +32,6 @@ const routes = [{
     name: 'Courseitem',
     component: () => import('../views/course/courseitem.vue'),
     meta: {
-      title: "课程详情",
-      isShow: true,
-      isShowleft: true,
-      isTab: false,
       email: true,
     }
   },
@@ -345,28 +342,12 @@ const routes = [{
   },
   //老师详情路由
   {
-    path: '/teacherXQ',
-    name: 'teacherXQ',
-    component: () => import('../views/teacherXQ.vue'),
+    path: '/teacherDetails',
+    name: 'TeacherDetails',
+    component: () => import('../views/HomeDetails/teacherDetails.vue'),
     meta: {
       email: true,
     },
-    children: [{
-        path: 'introduce',
-        name: 'introduce',
-        component: () => import('../views/teacherLX-second level/introduce.vue'),
-      },
-      {
-        path: 'course',
-        name: 'course',
-        component: () => import('../views/teacherLX-second level/course.vue'),
-      },
-      {
-        path: 'trainee',
-        name: 'trainee',
-        component: () => import('../views/teacherLX-second level/trainee.vue'),
-      }
-    ]
   },
   //设置密码
   {
@@ -393,13 +374,31 @@ const routes = [{
       isTab: false,
       email: true,
     }
+  },
+  //学习详情
+  {
+    path: '/study',
+    name: 'Study',
+    component: () => import('../views/course/Study.vue'),
+    meta: {
+      isShow: true,
+      isShowleft: true,
+      email: true,
+    }
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+  // mode: 'history',
+  // base: process.env.BASE_URL,
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+    return {
+      x: 0,
+      y: 0
+    }
+  }
 })
 
 export default router

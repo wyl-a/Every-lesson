@@ -93,7 +93,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .wyl_retrieve {
   width: 100%;
   height: 25vh;

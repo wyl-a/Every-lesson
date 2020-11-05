@@ -1,38 +1,74 @@
 <template>
   <div class="courseitem">
+    <van-nav-bar
+      title="标题"
+      left-text="返回"
+      right-text="按钮"
+      left-arrow
+      @click-left="onClickLeft"
+    >
+      <template #right>
+        <div @click="share" class="classDetails_box_header_img">
+          <van-icon name="share-o" />
+        </div>
+      </template>
+    </van-nav-bar>
+
+    <!-- 二维码 -->
+    <van-overlay :show="show" @click="show = false">
+      <div class="wrapper">
+        <div class="block">
+          <p>分享</p>
+          <div class="imrUrl">
+            <img :src="imrUrl" />
+          </div>
+        </div>
+      </div>
+    </van-overlay>
+
     <!--  课程详情 -->
     <div class="lzh-courseitembox">
       <div class="lzh-itemtitle">
-        <div class="lzh-itemtitleleft">
-          {{ courseitem.title }}
-        </div>
+        <div class="lzh-itemtitleleft">{{ list.title }}</div>
         <div class="lzh-itemtitleright">
-          <img src="/xingxing.png" alt="" />
+          <van-icon name="star-o" @click="onCollectOK" v-show="!isShow" />
+          <van-icon
+            name="star"
+            @click="onCollectNO"
+            v-show="isShow"
+            color="red"
+          />
         </div>
       </div>
-      <div class="lzh-mf">免费</div>
-      <div class="lzh-leshi">共8课时 | 132人报名</div>
+      <div class="lzh-mf">{{ list.price }}</div>
+      <div class="lzh-leshi">
+        共{{ list.total_periods }}课时 | {{ list.sales_num }}人报名
+      </div>
       <div class="lzh-leshi">开课时间：2020.03.16 18:30 - 2020.03.20 15:30</div>
     </div>
     <hr class="lzh-spx" />
     <div class="lzh-jiaoxue">
       <div>教学团队</div>
-      <div class="lzh-jiaoxueimg">
+      <div class="lzh-jiaoxueimg" @click="onTeacher(teacher.teacher_id)">
         <van-image
           round
           width="1.5rem"
           height="1.5rem"
-          :src="courseitem.cover_img"
-        />李青
+          :src="teacher.teacher_avatar"
+        />
+        <p>{{ teacher.teacher_name }}</p>
       </div>
     </div>
     <hr class="lzh-spx" />
-    <div class="lzh-kecheng">课程介绍</div>
+    <div class="lzh-kecheng">
+      <p>课程介绍</p>
+      <p v-html="list.course_details" style="font-size: 0.6rem"></p>
+    </div>
     <hr class="lzh-spx" />
     <div class="lzh-kechengdagang">
       课程大纲
       <div
-        style="font-size: 0.3rem; margin-left: 1rem; margin-top: 0.5rem"
+        style="font-size: 0.6rem; margin-top: 0.5rem"
         v-for="i in 5"
         :key="i"
       >
@@ -52,39 +88,116 @@
             round
             width="1.5rem"
             height="1.5rem"
-            :src="courseitem.cover_img"
+            :src="teacher.teacher_avatar"
           />
         </div>
         <div class="lzh-pinglhezi-right">
           <div>
-               13545688745 
-               <img src="/xzxingxing.png" alt="">
-               <img src="/xzxingxing.png" alt="">
-               <img src="/xzxingxing.png" alt="">
-               <img src="/xzxingxing.png" alt="">
-               2020.03.25 16:45
+            13545688745
+            <img src="/xzxingxing.png" alt="" />
+            <img src="/xzxingxing.png" alt="" />
+            <img src="/xzxingxing.png" alt="" />
+            <img src="/xzxingxing.png" alt="" />
+            2020.03.25 16:45
           </div>
           <div>dskhafdifh</div>
         </div>
       </div>
     </div>
-    <div style="height:2rem"></div>
-    <div class="lzh-lijiboaming">
-      <van-button type="warning">立即报名</van-button>
+    <div style="height: 2rem"></div>
+    <div class="lzh-lijiboaming" v-show="list.is_buy == 1">
+      <van-button type="warning" @click="onStudy">立即学习</van-button>
+    </div>
+    <div class="lzh-lijiboaming" v-show="list.is_buy == 0">
+      <van-button type="warning" @click="onApply">立即报名</van-button>
     </div>
   </div>
 </template>
 
 <script>
+import QRCode from "qrcode";
+import { Toast } from "vant";
 export default {
   data() {
     return {
-      courseitem: [],
+      show: false, //判断是否让遮罩层出现
+      imrUrl: "", // 图片的地址
+      list: [],
+      teacher: [],
+      isShow: false,
+      id: "",
     };
   },
   mounted() {
-    this.courseitem = this.$route.query.item;
-    console.log(this.courseitem);
+    this.$APP.courseInfo(this.$route.query.id).then((res) => {
+      console.log(res.data.data.teachers);
+      this.list = res.data.data.info;
+      this.id = res.data.data.info.id;
+      this.teacher = res.data.data.teachers[0];
+      if (res.data.data.info.is_collect == 1) {
+        this.isShow = true;
+      } else {
+        this.isShow = false;
+      }
+    });
+  },
+  methods: {
+    //跳转到老师详情
+    onTeacher(id) {
+      console.log(id);
+      this.$router.push({
+        path: "/teacherDetails",
+        query: {
+          id: id,
+        },
+      });
+    },
+    //立即报名
+    onApply() {
+      this.$APP
+        .downOrder({
+          shop_id: this.id,
+          type: 5,
+        })
+        .then((res) => {
+          console.log(res);
+        });
+    },
+    onStudy() {
+      this.$router.push("/study");
+    },
+    //返回
+    onClickLeft() {
+      this.$router.go(-1);
+    },
+    // 点击分享
+    share() {
+      this.show = true;
+      let url = location.href;
+      console.log(url);
+      QRCode.toDataURL(url)
+        //在这里拿到地址，把它赋值给data里面定义的值imrUrl
+        .then((tpian) => {
+          console.log(tpian);
+          this.imrUrl = tpian;
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
+    //收藏
+    onCollectOK() {
+      let { data } = this.$APP.collectOK({
+        course_basis_id: this.$route.query.id,
+        type: 1,
+      });
+      this.isShow = true;
+    },
+    //取消收藏
+    onCollectNO() {
+      this.isShow = false;
+      this.$APP.collectNO(this.list.collect_id).then((res) => {});
+    },
   },
 };
 </script>
@@ -123,6 +236,7 @@ export default {
   color: rgb(150, 150, 150);
   margin-left: 1rem;
   margin-bottom: 0.3rem;
+  font-size: 0.55rem;
 }
 .lzh-spx {
   width: 99%;
@@ -135,17 +249,14 @@ export default {
   height: 5rem;
 }
 .lzh-jiaoxueimg {
-  width: 1.5rem;
+  width: 3rem;
   margin-top: 0.5rem;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
 }
 .lzh-kecheng {
-  padding-left: 1rem;
-  padding-top: 0.5rem;
-  height: 2rem;
+  height: 100%;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  align-items: center;
 }
 .lzh-kechengdagang {
   padding-left: 1rem;
@@ -170,13 +281,19 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-.lzh-pinglhezi-left{
- width: 15%;
+.lzh-pinglhezi-left {
+  width: 12%;
 }
-.lzh-pinglhezi-right img{
-    width: 0.5rem;
+.lzh-pinglhezi-right img {
+  width: 0.5rem;
 }
-.lzh-pinglhezi-right{
-  width: 85%;
+.lzh-pinglhezi-right {
+  width: 88%;
+}
+.imrUrl {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

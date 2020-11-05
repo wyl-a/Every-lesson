@@ -32,38 +32,20 @@
         <p>学习日历</p>
       </div>
     </div>
-    <!-- 名师阵容 -->
-    <section>
-      <FTtitle :title="listtitle1"></FTtitle>
-      <FamousBox>
-        <FamousItem :famous="famous"></FamousItem>
-      </FamousBox>
-    </section>
-
-    <!-- 精选课程 -->
-    <section>
-      <FTtitle :title="listtitle2"></FTtitle>
-      <ExcellentBox>
-        <ExcellentItem :excellent_course="excellent_course"></ExcellentItem>
-      </ExcellentBox>
-    </section>
-
-    <!-- 推荐课程 -->
-    <section>
-      <FTtitle :title="listtitle3"></FTtitle>
-      <RecommendBox>
-        <RecommendItem :recommended="recommended"></RecommendItem>
-      </RecommendBox>
-    </section>
-
-    <!-- 明星讲师 -->
-    <section>
-      <FTtitle :title="listtitle4"></FTtitle>
-      <IecturerBox>
-        <IecturerItem :lecturer="lecturer"></IecturerItem>
-      </IecturerBox>
-    </section>
-
+    <div v-for="(item, index) in list" :key="index">
+      <section v-if="item.channel_info.type == 3">
+        <FTtitle :title="item.channel_info.name"></FTtitle>
+        <FamousBox>
+          <FamousItem :famous="item.list"></FamousItem>
+        </FamousBox>
+      </section>
+      <section v-if="item.channel_info.type == 1">
+        <FTtitle :title="item.channel_info.name"></FTtitle>
+        <ExcellentBox>
+          <ExcellentItem :excellent_course="item.list"></ExcellentItem>
+        </ExcellentBox>
+      </section>
+    </div>
     <div class="box"></div>
   </div>
 </template>
@@ -74,10 +56,6 @@ import FamousBox from "../components/Home/famousBox";
 import FamousItem from "../components/Home/famousItem";
 import ExcellentBox from "../components/Home/excellentBox";
 import ExcellentItem from "../components/Home/excellentItem";
-import RecommendBox from "../components/Home/recommendBox";
-import RecommendItem from "../components/Home/recommendItem";
-import IecturerBox from "../components/Home/IecturerBox";
-import IecturerItem from "../components/Home/lecturerItem";
 
 import Vue from "vue";
 import { Lazyload } from "vant";
@@ -90,10 +68,6 @@ export default {
     FamousItem,
     ExcellentBox,
     ExcellentItem,
-    RecommendBox,
-    RecommendItem,
-    IecturerBox,
-    IecturerItem,
   },
   data() {
     return {
@@ -104,17 +78,9 @@ export default {
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019LnKumseuhw1569839569.jpg",
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20193KAjU2cB6h1569839562.jpg",
       ],
-      listtitle1: "",
-      listtitle2: "",
-      listtitle3: "",
-      listtitle4: "",
-      famous: [], //名师阵容
-      excellent_course: [], //精选课程
-      recommended: [], //推荐课程
-      lecturer: [], //明星讲师
+      list: [],
     };
   },
-  mounted() {},
   methods: {
     onevsone() {
       this.$router.push("/onevsone");
@@ -127,19 +93,9 @@ export default {
     },
   },
   mounted() {
-    //获取首页列表数据
-    this.$APP.getteacher().then((res) => {
-      this.listtitle1 = res.data.data[4].channel_info.name;
-      this.listtitle2 = res.data.data[1].channel_info.name;
-      this.listtitle3 = res.data.data[3].channel_info.name;
-      this.listtitle4 = res.data.data[0].channel_info.name;
-    });
-    this.$axios.get("/home.json").then((res) => {
-      console.log(res);
-      this.famous = res.data.famous; //名师阵容
-      this.excellent_course = res.data.excellent_course; //精选课程
-      this.recommended = res.data.recommended; //推荐课程
-      this.lecturer = res.data.lecturer; //明星讲师
+    this.$APP.home().then((res) => {
+      this.list = res.data.data;
+      // console.log(res);
     });
   },
 };

@@ -1,6 +1,6 @@
 <template>
   <div>
-      主讲课程
+      学习
   </div>
 </template>
 

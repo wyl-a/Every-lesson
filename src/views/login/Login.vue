@@ -1,26 +1,13 @@
 <template>
   <!-- 密码登录 -->
-  <div class="wyl_login">
+  <div>
     <div class="wyl_login_img">
       <img src="../../assets/Login/login.png" alt="" />
     </div>
-    <div>
-      <van-form @submit="onSubmit">
-        <van-field
-          v-model="username"
-          name="用户名"
-          placeholder="用户名"
-          :rules="[{ required: true, message: '请填写用户名' }]"
-        />
-        <van-field
-          v-model="password"
-          type="password"
-          name="密码"
-          placeholder="密码"
-          :rules="[{ required: true, message: '请填写密码' }]"
-        />
-      </van-form>
-    </div>
+    <van-cell-group>
+      <van-field v-model="username" label="用户名" placeholder="用户名" />
+      <van-field v-model="password" label="密码" placeholder="密码" />
+    </van-cell-group>
     <div class="wyl_login_register">
       <span @click="retrieve">找回密码</span>
       <div>
@@ -42,9 +29,6 @@ export default {
     };
   },
   methods: {
-    onSubmit(values) {
-      console.log("submit", values);
-    },
     retrieve() {
       this.$router.push("/retrieve");
     },
@@ -61,7 +45,7 @@ export default {
         })
         .then((res) => {
           console.log(res);
-          let token = res.data.data.remember_token;
+          var token = res.data.data.remember_token;
           window.localStorage.setItem("token", token);
           console.log(res.data.data.is_new);
           if (res.data.data.is_new < 1) {
@@ -78,6 +62,7 @@ export default {
 <style scoped>
 .wyl_login {
   width: 100%;
+  height: 100vh;
 }
 .wyl_login_img {
   width: 100%;

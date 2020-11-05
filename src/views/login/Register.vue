@@ -121,7 +121,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  /* color: white; */
   font-size: 0.8rem;
 }
 .wyl_login_button button {

@@ -8,11 +8,11 @@
     >
       <div class="wyl_famousItem_box">
         <div class="wyl_famousItem_box_left">
-          <img :src="item.img" alt="" />
+          <img :src="item.teacher_avatar" alt="" />
         </div>
         <div class="wyl_famousItem_box_right">
-          <p>{{ item.name }}</p>
-          <div class="van-ellipsis">{{ item.title }}</div>
+          <p>{{ item.teacher_name }}</p>
+          <div class="van-ellipsis">{{ item.introduction }}</div>
         </div>
       </div>
     </div>
@@ -29,8 +29,8 @@ export default {
   methods: {
     onFamous(item) {
       this.$router.push({
-        path: "/teacherXQ/introduce",
-        query: { item: item },
+        path: "/teacherDetails",
+        query: { id:item.teacher_id},
       });
     },
   },
