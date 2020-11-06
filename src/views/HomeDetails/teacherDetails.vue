@@ -89,7 +89,12 @@
         </van-tab>
       </van-tabs>
       <router-view></router-view>
-      <van-button class="zmb_yvyue_btn" type="primary" color="#EB6100" block
+      <van-button
+        class="zmb_yvyue_btn"
+        type="primary"
+        color="#EB6100"
+        block
+        @click="onorder"
         >立即预约</van-button
       >
     </div>
@@ -121,15 +126,24 @@ export default {
         console.log(res);
       });
     },
+    //预约
+    onorder() {
+      this.$router.push({
+        path: "/teacherorder",
+        query: {
+          teacherdata: this.item,
+        },
+      });
+    },
   },
   mounted() {
     this.$APP.teacher(this.$route.query.id).then((res) => {
       this.item = res.data.data.teacher;
       console.log(res.data.data.flag);
-      if(res.data.data.flag==1){
-        this.isShow=true
-      }else{
-        this.isShow=false
+      if (res.data.data.flag == 1) {
+        this.isShow = true;
+      } else {
+        this.isShow = false;
       }
     }),
       this.$APP.course().then((res) => {

@@ -22,7 +22,7 @@ const routes = [{
       title: "特色课",
       isShow: true,
       isShowleft: false,
-      isShowright:true,
+      isShowright: true,
       isTab: true,
       email: true,
     }
@@ -286,9 +286,6 @@ const routes = [{
     component: () => import('../views/User/LearningCard.vue'),
     meta: {
       title: "学习卡",
-      isShow: true,
-      isShowleft: true,
-      isTab: true,
       email: true,
     }
   },
@@ -381,11 +378,46 @@ const routes = [{
     name: 'Study',
     component: () => import('../views/course/Study.vue'),
     meta: {
-      isShow: true,
-      isShowleft: true,
       email: true,
     }
-  }
+  },
+  {
+    path: '/sex',
+    name: 'Sex',
+    component: () => import('../views/User/Edit/sex.vue'),
+    meta: {
+      email: true,
+    }
+  },
+  {
+    path: '/nickname',
+    name: 'Nickname',
+    component: () => import('../views/User/Edit/nickname.vue'),
+    meta: {
+      email: true,
+    }
+  },
+  //预约
+  {
+    path: '/teacherorder',
+    name: 'Teacherorder',
+    component: () => import('../views/HomeDetails/teacherorder.vue'),
+    meta: {
+      email: true,
+    }
+  },
+  {
+      path: '/dhuanxxka',
+      name: 'dhuanxxka',
+      component: () => import('../views/User/dhuanxxka.vue'),
+      meta: {
+        title: "学习卡兑换",
+        isShow: true,
+        isShowleft: true,
+        isTab: true,
+        email: true,
+      }
+    },
 ]
 
 const router = new VueRouter({

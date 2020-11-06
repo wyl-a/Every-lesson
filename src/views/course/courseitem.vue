@@ -163,8 +163,18 @@ export default {
           console.log(res);
         });
     },
+    //学习
     onStudy() {
-      this.$router.push("/study");
+      console.log("学习");
+      this.$APP.Learn_now(this.id).then((res) => {
+        console.log(res.data.data);
+        this.$router.push({
+          path: "/study",
+          query: {
+            item: res.data.data,
+          },
+        });
+      });
     },
     //返回
     onClickLeft() {

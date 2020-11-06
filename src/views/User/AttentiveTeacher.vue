@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="top"></div>
     <div class="wyl_famousItem" v-for="(item, index) in list" :key="index">
       <div class="wyl_famousItem_box">
         <div class="wyl_famousItem_box_left">
@@ -45,6 +46,10 @@ export default {
 </script>
 
 <style>
+.top{
+  width: 100%;
+  height: 50px;
+}
 .wyl_famousItem {
   width: 100%;
   height: 10vh;

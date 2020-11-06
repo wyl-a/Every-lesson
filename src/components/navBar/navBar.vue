@@ -6,11 +6,13 @@
       :left-arrow="isShowleft"
       @click-left="up"
       @click-right="search"
+      fixed
     >
       <template #right>
         <van-icon name="search" size="18" v-show="isShowright" />
       </template>
     </van-nav-bar>
+    <!-- <div class="box"></div> -->
   </div>
 </template>
 
@@ -34,11 +36,13 @@ export default {
     isShowright() {
       return this.$route.meta.isShowright;
     },
-
   },
 };
 </script>
 
-<style>
-
+<style scoped>
+.box{
+  width: 100%;
+  height: 50px;
+}
 </style>

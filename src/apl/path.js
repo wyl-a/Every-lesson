@@ -32,12 +32,20 @@ const apl = {
         Collects: "/api/app/collect?page=1&limit=10&type=2&",
         //课程报名
         DownOrder: "/api/app/order/downOrder",
+        //立即学习
+        Learn_now: "/api/app/myStudy/course/",
         //特色课
         CourseClassify: "/api/app/courseClassify",
         //特色课数据
-        CourseBasis:"/api/app/courseBasis?page=1&limit=10&",
+        CourseBasis: "/api/app/courseBasis",
         //搜索
-        CourseSearch:"/api/app/courseBasis?limit=10&page=1&course_type=0&keywords=",
+        CourseSearch: "/api/app/courseBasis?limit=10&page=1&course_type=0&keywords=",
+        //个人信息
+        UserInfo: "/api/app/userInfo",
+        //修改个人信息
+        User: "/api/app/user",
+        //城市接口
+        SonArea: "/api/app/sonArea/",
     }
 }
 export default apl

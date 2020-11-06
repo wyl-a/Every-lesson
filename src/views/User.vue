@@ -7,11 +7,11 @@
         <div class="wyl_user_personage_box">
           <div class="wyl_user_personage_box_top">
             <div class="wyl_user_personage_box_top_img">
-              <img src="../assets/User/user.jpg" alt="" />
+              <img :src="avatar" alt=""/>
             </div>
             <div class="wyl_user_personage_box_top_title">
               <div class="wyl_user_personage_box_top_name">
-                <div>杨狗蛋</div>
+                <div>{{ nickname }}</div>
                 <van-icon name="edit" @click="edit" />
               </div>
               <div class="wyl_user_personage_box_top_button" @click="onevsone">
@@ -111,16 +111,18 @@ export default {
     UserBox,
     UserItem,
   },
-  beforeRouteEnter (to, from, next) {
-        let token = localStorage.getItem('token')
-        if(token){
-          next()
-        }else{
-          next('/login')
-        }
+  beforeRouteEnter(to, from, next) {
+    let token = localStorage.getItem("token");
+    if (token) {
+      next();
+    } else {
+      next("/login");
+    }
   },
   data() {
     return {
+      avatar: localStorage.getItem("avatar") || "",
+      nickname: JSON.parse(localStorage.getItem("value")) || [], //姓名
       nei: [
         {
           icon:
@@ -208,9 +210,9 @@ export default {
       this.$router.push("/onevsone");
     },
     //编辑个人信息
-    edit(){
-      this.$router.push('/edit');
-    }
+    edit() {
+      this.$router.push("/edit");
+    },
   },
 };
 </script>
@@ -264,10 +266,11 @@ export default {
   width: 25%;
   height: 4.4rem;
   margin-left: 15px;
-  margin-top: 15px;
+  margin-top: 30px;
 }
 .wyl_user_personage_box_top_img img {
-  width: 80%;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
 }
 .wyl_user_personage_box_top_title {

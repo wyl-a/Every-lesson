@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="top"></div>
     <div
       class="excellent_course"
       v-for="(item, index) in list"
@@ -83,6 +84,10 @@ export default {
 </script>
 
 <style scoped>
+.top{
+  width: 100%;
+  height: 50px;
+}
 .box {
   width: 100%;
   height: 3rem;
