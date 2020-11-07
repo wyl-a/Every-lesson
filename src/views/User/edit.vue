@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="top"></div>
     <div class="edit_box">
       <!-- 头像 -->
       <van-cell is-link title="头像" @click="show = true">
@@ -90,6 +89,7 @@ export default {
         this.id = item.id;
       });
     });
+
     //市的数据
     this.$APP.sonArea(this.id).then((res) => {});
   },
@@ -126,6 +126,7 @@ export default {
       this.$APP.user({ birthday: this.time }).then((res) => {
         console.log(res);
       });
+
       this.showDate = false;
     },
     //头像面板

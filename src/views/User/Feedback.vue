@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="top"></div>
     <van-field
       v-model="message"
       rows="2"

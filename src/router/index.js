@@ -117,7 +117,6 @@ const routes = [{
     meta: {}
   },
   { //考点专练
-
     path: '/examination-site',
     name: 'Examination-site',
     component: () => import('../views/practice/Examination-site.vue'),
@@ -407,12 +406,36 @@ const routes = [{
     }
   },
   {
-      path: '/dhuanxxka',
-      name: 'dhuanxxka',
-      component: () => import('../views/User/dhuanxxka.vue'),
+    path: '/dhuanxxka',
+    name: 'dhuanxxka',
+    component: () => import('../views/User/dhuanxxka.vue'),
+    meta: {
+      title: "学习卡兑换",
+      isShow: true,
+      isShowleft: true,
+      isTab: true,
+      email: true,
+    }
+  },
+  {
+    path: '/bi',
+    name: 'Bi',
+    component: () => import('../views/User/Bi.vue'),
+    meta: {
+      title: '我的学习币',
+      isShow: true,
+      isShowleft: true,
+      email: true,
+      isShowright: false //顶部搜索
+    }
+  },
+  {
+      path: '/teseke',
+      name: 'teseke',
+      component: () => import('../views/User/teseke.vue'),
       meta: {
-        title: "学习卡兑换",
-        isShow: true,
+        title: "我的学习",
+        isShow: false,
         isShowleft: true,
         isTab: true,
         email: true,
@@ -432,5 +455,10 @@ const router = new VueRouter({
     }
   }
 })
+
+router.beforeEach((to, feom, next) => {
+    document.title = to.meta.title
+    next()
+  })
 
 export default router

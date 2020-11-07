@@ -32,11 +32,37 @@
         </div>
       </div>
     </div>
+    <van-popup
+      v-model="show"
+      :style="{ height: '48%', width: '80%' }"
+      closeable
+    >
+      <div class="popup">
+        <img src="../../assets/popup.png" alt="" width="100%" />
+        <p style="font-size: 0.6rem; text-align: center">赶紧登陆一下吧</p>
+        <p style="color: gray; font-size: 0.5rem; text-align: center">
+          立即预约一对一辅导，浏览更多视频课程~
+        </p>
+        <van-button
+          type="warning"
+          block
+          round
+          style="width: 50%; margin-left: 25%;margin-top: 5%"
+          @click="onlogin"
+          >立即登陆</van-button
+        >
+      </div>
+    </van-popup>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      show: false,
+    };
+  },
   props: {
     excellent_course: {
       type: Array,
@@ -44,21 +70,37 @@ export default {
   },
   methods: {
     courseitem(item) {
-      this.$router.push({
-        path: "/courseitem",
-        query: {
-          id:item.id,
-        },
-      });
+      if (!localStorage.getItem("token")) {
+        this.show = true;
+      } else {
+        this.$router.push({
+          path: "/courseitem",
+          query: {
+            id: item.id,
+          },
+        });
+      }
     },
+     onlogin(){
+      this.$router.push({
+        path:"/login"
+      })
+    }
   },
-  mounted(){
+  mounted() {
     console.log(this.excellent_course);
-  }
+  },
 };
 </script>
 
-<style>
+<style scoped>
+.van-popup {
+  border-radius: 0.5rem;
+}
+.popup {
+  width: 100%;
+  height: 100%;
+}
 .excellent_course {
   width: 100%;
   height: 35vh;

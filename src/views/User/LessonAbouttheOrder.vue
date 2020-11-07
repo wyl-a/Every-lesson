@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="top"></div>
     <div class="booking-tab">
       <van-tabs v-model="active">
         <van-tab title="全部订单">

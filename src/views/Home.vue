@@ -46,6 +46,29 @@
         </ExcellentBox>
       </section>
     </div>
+
+    <van-popup
+      v-model="show"
+      :style="{ height: '48%', width: '80%' }"
+      closeable
+    >
+      <div class="popup">
+        <img src="../assets/popup.png" alt="" width="100%" />
+        <p style="font-size: 0.6rem; text-align: center">赶紧登陆一下吧</p>
+        <p style="color: gray; font-size: 0.5rem; text-align: center">
+          立即预约一对一辅导，浏览更多视频课程~
+        </p>
+        <van-button
+          type="warning"
+          block
+          round
+          style="width: 50%; margin-left: 25%;margin-top: 5%"
+          @click="onlogin"
+          >立即登陆</van-button
+        >
+      </div>
+    </van-popup>
+
     <div class="box"></div>
   </div>
 </template>
@@ -79,6 +102,7 @@ export default {
         "https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20193KAjU2cB6h1569839562.jpg",
       ],
       list: [],
+      show: false,
     };
   },
   methods: {
@@ -89,7 +113,16 @@ export default {
       this.$router.push("/course");
     },
     lzhrili() {
-      this.$router.push("/rili");
+      if (!localStorage.getItem("token")) {
+        this.show = true;
+      } else {
+        this.$router.push("/rili");
+      }
+    },
+    onlogin() {
+      this.$router.push({
+        path: "/login",
+      });
     },
   },
   mounted() {
@@ -102,11 +135,17 @@ export default {
 </script>
 
 <style scoped>
+.van-popup {
+  border-radius: 0.5rem;
+}
+.popup {
+  width: 100%;
+  height: 100%;
+}
 * {
   margin: 0;
   padding: 0;
 }
-
 body {
   width: 100%;
   height: 100%;

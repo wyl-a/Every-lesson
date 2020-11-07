@@ -33,7 +33,10 @@ export default {
       this.$router.push("/retrieve");
     },
     onRegister() {
-      this.$router.push("/register");
+      this.$router.push({
+       path: "/register",
+       name:'register'
+      });
     },
     //登录
     onClickLogin() {

@@ -6,7 +6,7 @@
       :left-arrow="isShowleft"
       @click-left="up"
       @click-right="search"
-      fixed
+      
     >
       <template #right>
         <van-icon name="search" size="18" v-show="isShowright" />

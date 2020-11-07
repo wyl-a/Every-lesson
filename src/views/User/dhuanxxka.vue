@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="top"></div>
     <van-form @submit="onSubmit">
       <van-field
         v-model="username"

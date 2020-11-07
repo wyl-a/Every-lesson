@@ -7,7 +7,7 @@
         <div class="wyl_user_personage_box">
           <div class="wyl_user_personage_box_top">
             <div class="wyl_user_personage_box_top_img">
-              <img :src="avatar" alt=""/>
+              <img :src="avatar" alt="" />
             </div>
             <div class="wyl_user_personage_box_top_title">
               <div class="wyl_user_personage_box_top_name">
@@ -21,21 +21,22 @@
           </div>
 
           <div class="wyl_user_personage_box_bottom">
-            <div>
+            <div @click="teseke">
               <p style="color: orange; font-size: 1.2rem; font-weight: 600">
                 3
               </p>
               <p style="font-size: 0.7rem">我的特色课</p>
               <p style="font-size: 0.4rem; color: gray">已购特色课程的学习</p>
             </div>
-            <div style="border-left: 1px solid #e6e6e6">
+            <div style="border-left: 1px solid #e6e6e6" @click="onevsone">
               <p style="color: orange; font-size: 1.2rem; font-weight: 600">
                 0
               </p>
               <p style="font-size: 0.7rem">一对一辅导</p>
               <p style="font-size: 0.4rem; color: gray">我的一对一老师辅导</p>
             </div>
-            <div style="border-left: 1px solid #e6e6e6">
+
+            <div style="border-left: 1px solid #e6e6e6" @click="clickBi">
               <p style="color: orange; font-size: 1.2rem; font-weight: 600">
                 0.00
               </p>
@@ -213,6 +214,16 @@ export default {
     edit() {
       this.$router.push("/edit");
     },
+    //学习币
+    clickBi() {
+      this.$router.push("/bi");
+    },
+    teseke(){
+      this.$router.push("/teseke")
+    },
+    onevsone() {
+      this.$router.push("/onevsone");
+    },
   },
 };
 </script>

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="top"></div>
     <div class="wyl_famousItem" v-for="(item, index) in list" :key="index">
       <div class="wyl_famousItem_box">
         <div class="wyl_famousItem_box_left">
